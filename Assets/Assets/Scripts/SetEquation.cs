@@ -9,17 +9,18 @@ public class SetEquation : MonoBehaviour
     [SerializeField] private TextMeshProUGUI textEquation;
     private int x;
 
-    void Start()
+    private void Start()
     {
         x = Random.Range(101, 1000);
         textEquation.text = x.ToString() + " * 11 = ?";
     }
 
-    void Update()
+    public void IsCorrect()
     {
         if (textInput.text == (x * 11).ToString()) 
         {
             textEquation.text = "Correct!";
         }
+        else textEquation.text = "You're an IDIOT!!!!!";
     }
 }

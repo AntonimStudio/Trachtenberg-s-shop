@@ -51,4 +51,8 @@ public class SetNumbers : MonoBehaviour
     {
         textInput.text = "0" + textInput.text;
     }
+    public void SetX()
+    {
+        textInput.text = textInput.text.Remove(0, 1);
+    }
 }
