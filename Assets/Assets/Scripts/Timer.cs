@@ -14,10 +14,10 @@ public class Timer : MonoBehaviour
     {
         beginPos = new Vector3(point1.transform.position.x, point1.transform.position.y, 0);
         endPos = new Vector3(point2.transform.position.x, point2.transform.position.y, 0);
-        StartCoroutine(Move(beginPos, endPos, time));
+        StartCoroutine(Moving(beginPos, endPos, time));
     }
 
-    IEnumerator Move(Vector3 beginPos, Vector3 endPos, float time)
+    IEnumerator Moving(Vector3 beginPos, Vector3 endPos, float time)
     {
         for (float t = 0; t < 1; t += Time.deltaTime / time)
         {

@@ -6,53 +6,46 @@ using TMPro;
 public class SetNumbers : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI textInput;
+    [SerializeField] private GameObject input;
     private void Start()
     {
         textInput.text = "";
+        RectTransform rt = input.GetComponent<RectTransform>();
     }
 
-    public void Set1()
+    public void SetNum(int x)
     {
-        textInput.text = "1" + textInput.text;
+        if (textInput.text.Length < 16 && textInput.text.Length > 9) 
+        {
+            input.GetComponent<Transform>().Translate(-35, 0, 0);
+        }
+        if (textInput.text.Length < 16)
+        {
+            textInput.text = x.ToString() + textInput.text;
+        }
+
+        if (textInput.text == "80085")
+        {
+            StartCoroutine(EasterEgg());
+        }
     }
-    public void Set2()
-    {
-        textInput.text = "2" + textInput.text;
-    }
-    public void Set3()
-    {
-        textInput.text = "3" + textInput.text;
-    }
-    public void Set4()
-    {
-        textInput.text = "4" + textInput.text;
-    }
-    public void Set5()
-    {
-        textInput.text = "5" + textInput.text;
-    }
-    public void Set6()
-    {
-        textInput.text = "6" + textInput.text;
-    }
-    public void Set7()
-    {
-        textInput.text = "7" + textInput.text;
-    }
-    public void Set8()
-    {
-        textInput.text = "8" + textInput.text;
-    }
-    public void Set9()
-    {
-        textInput.text = "9" + textInput.text;
-    }
-    public void Set0()
-    {
-        textInput.text = "0" + textInput.text;
-    }
+
     public void SetX()
     {
-        textInput.text = textInput.text.Remove(0, 1);
+        if (textInput.text.Length > 0)
+        {
+            textInput.text = textInput.text.Remove(0, 1);
+        }
+        if (textInput.text.Length >= 10)
+        {
+            input.GetComponent<Transform>().Translate(35, 0, 0);
+        }
+    }
+
+    IEnumerator EasterEgg()
+    {
+        textInput.text = "(.)(.)";
+        yield return new WaitForSeconds(0.25f);
+        textInput.text = "80085";
     }
 }
