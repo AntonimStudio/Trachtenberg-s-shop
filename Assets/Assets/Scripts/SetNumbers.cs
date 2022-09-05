@@ -17,7 +17,7 @@ public class SetNumbers : MonoBehaviour
     {
         if (textInput.text.Length < 16 && textInput.text.Length > 9) 
         {
-            input.GetComponent<Transform>().Translate(-35, 0, 0);
+            input.GetComponent<Transform>().Translate(-40, 0, 0);
         }
         if (textInput.text.Length < 16)
         {
@@ -38,7 +38,7 @@ public class SetNumbers : MonoBehaviour
         }
         if (textInput.text.Length >= 10)
         {
-            input.GetComponent<Transform>().Translate(35, 0, 0);
+            input.GetComponent<Transform>().Translate(40, 0, 0);
         }
     }
 
