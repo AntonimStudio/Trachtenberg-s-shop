@@ -6,14 +6,24 @@ public class Timer : MonoBehaviour
 {
     [SerializeField] private GameObject point1;
     [SerializeField] private GameObject point2;
+    [SerializeField] private GameObject CG;
+    [SerializeField] private GameObject SE;
+    [SerializeField] private GameObject SN;
+    private CharacterGenerator cg;
+    private SetNumbers sn;
+    private SetEquation se;
     private Vector3 beginPos;
     private Vector3 endPos;
-    [SerializeField] private float time = 2;
+    private bool timeIsOver = false;
+    [SerializeField] private float time;
 
     void Start()
     {
+        cg = CG.GetComponent<CharacterGenerator>();
+        se = SE.GetComponent<SetEquation>();
+        sn = SN.GetComponent<SetNumbers>();
         beginPos = new Vector3(point1.transform.position.x, point1.transform.position.y, 0);
-        endPos = new Vector3(point2.transform.position.x, point2.transform.position.y, 0);
+        endPos = new Vector3(point2.transform.position.x - 10, point2.transform.position.y, 0);
         StartCoroutine(Moving(beginPos, endPos, time));
     }
 
@@ -23,6 +33,20 @@ public class Timer : MonoBehaviour
         {
             transform.position = Vector3.Lerp(beginPos, endPos, t);
             yield return null;
+        }
+        timeIsOver = true;
+    }
+
+    private void Update()
+    {
+        if (timeIsOver)
+        {
+            transform.position = new Vector3(point1.transform.position.x, point1.transform.position.y, 0);
+            se.SetText();
+            cg.—hange—haracter();
+            sn.Clear();
+            timeIsOver = false;
+            StartCoroutine(Moving(beginPos, endPos, time));
         }
     }
 }

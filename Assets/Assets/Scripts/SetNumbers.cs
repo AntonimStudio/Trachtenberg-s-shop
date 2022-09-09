@@ -7,10 +7,16 @@ public class SetNumbers : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI textInput;
     [SerializeField] private GameObject input;
+
     private void Start()
     {
         textInput.text = "";
         RectTransform rt = input.GetComponent<RectTransform>();
+    }
+
+    public void Clear()
+    {
+        textInput.text = "";
     }
 
     public void SetNum(int x)
