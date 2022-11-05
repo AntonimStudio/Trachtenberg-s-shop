@@ -6,7 +6,7 @@ using System;
 
 public class Buyer : MonoBehaviour
 {
-    [SerializeField] private Sprite[] _characters;
+    [SerializeField] private CharacterSO[] _characters;
     [SerializeField] private float _speedMove;
     [SerializeField] private float _timeWaitAfterAnswer;
     [SerializeField] private Transform _questionPoint;
@@ -18,11 +18,6 @@ public class Buyer : MonoBehaviour
     private BuyerState _state = BuyerState.GoToQuestion;
 
     public event Action StartedStay;
-
-    public string StartMessage { get; private set; } = "Привет";
-    public string QuestionMessage { get; private set; } = "2*2=?";
-    public string GoodResultMessage { get; private set; } = "Благодарю";
-    public string BadResultMessage { get; private set; } = "Неверно!";
 
     private void Start()
     {
@@ -39,7 +34,7 @@ public class Buyer : MonoBehaviour
                 if(transform.position == _questionPoint.position)
                 {
                     _state = BuyerState.StayOnQuestion;
-                    _message.text = StartMessage;
+                    _message.text = _characters[_lastCharacter].GetRandomStartMessage();
                     StartedStay?.Invoke();
                 }
                 break;
@@ -66,7 +61,7 @@ public class Buyer : MonoBehaviour
         while (newCharacter == _lastCharacter);
 
         _lastCharacter = newCharacter;
-        _spriteRenderer.sprite = _characters[newCharacter];
+        _spriteRenderer.sprite = _characters[newCharacter].Sprite;
     }
 
     private IEnumerator GoingToStart()
@@ -78,12 +73,13 @@ public class Buyer : MonoBehaviour
     public void OnGoToStart(bool result)
     {
         StartCoroutine(GoingToStart());
-        _message.text = result ? GoodResultMessage : BadResultMessage;
+        _message.text = result ? _characters[_lastCharacter].GetRandomGoodResultMessage() : 
+            _characters[_lastCharacter].GetRandomBadResultMessage();
     }
 
     public void OnAsk()
     {
-        _message.text = QuestionMessage;
+        _message.text = _characters[_lastCharacter].GetRandomQuestionMessage(5, 21);
     }
 }
 

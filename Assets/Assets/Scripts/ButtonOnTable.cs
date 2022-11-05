@@ -9,19 +9,30 @@ public class ButtonOnTable : MonoBehaviour
     [SerializeField] private ButtonsTable _table;
     [SerializeField] private Button _button;
 
+    private bool _canClick;
+
     private void OnEnable()
     {
         _button.onClick.AddListener(OnClick);
+        _table.AllowedClick += OnAllowedClick;
+        _table.BannedClick += OnBannedClick;
     }
 
     private void OnDisable()
     {
         _button.onClick.RemoveListener(OnClick);
+        _table.AllowedClick -= OnAllowedClick;
+        _table.BannedClick -= OnBannedClick;
     }
+
+    private void OnAllowedClick() => _canClick = true;
+
+    private void OnBannedClick() => _canClick = false;
 
     private void OnClick()
     {
-        _table.TakeInformation(_type);
+        if(_canClick)
+            _table.TakeInformation(_type);
     }
 }
 

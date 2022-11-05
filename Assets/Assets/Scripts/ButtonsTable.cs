@@ -9,9 +9,13 @@ public class ButtonsTable : MonoBehaviour
     [SerializeField] private Buyer _buyer;
     [SerializeField] private TextMeshProUGUI _answerText;
     [SerializeField] private CanvasGroup _group;
+    [SerializeField] private ResponseTimer _timer;
 
     private ButtonsTableState _state;
     private int _result;
+
+    public event Action AllowedClick;
+    public event Action BannedClick;
 
     private void OnEnable()
     {
@@ -23,13 +27,20 @@ public class ButtonsTable : MonoBehaviour
         _buyer.StartedStay -= OnStartedStay;
     }
 
+    private void Start()
+    {
+        BannedClick?.Invoke();
+    }
+
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0) && _state == ButtonsTableState.WaitClickOnScreen)
+        if (Input.GetMouseButtonUp(0) && _state == ButtonsTableState.WaitClickOnScreen)
         {
             _state = ButtonsTableState.WaitInput;
             _group.interactable = true;
             _buyer.OnAsk();
+            _timer.OnTimer();
+            AllowedClick?.Invoke();
         }
     }
 
@@ -42,6 +53,8 @@ public class ButtonsTable : MonoBehaviour
                 _state = ButtonsTableState.Forbidden;
                 _group.interactable = false;
                 _result = 0;
+                _timer.ResetTimer();
+                BannedClick?.Invoke();
                 break;
             case TypeButton.Cancel:
                 _result /= 10;
@@ -56,6 +69,7 @@ public class ButtonsTable : MonoBehaviour
 
     private void OnStartedStay()
     {
+        _timer.FillTimer();
         _state = ButtonsTableState.WaitClickOnScreen;
     }
 }

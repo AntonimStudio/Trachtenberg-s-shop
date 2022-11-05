@@ -3,22 +3,22 @@ using System;
 
 public class Timer
 {
-    private float _time;
-    private float _maxTime;
-
     public event Action EndedTimer;
+
+    public float Time { get; private set; }
+    public float MaxTime { get; private set; }
 
     public Timer(float maxTime)
     {
-        _maxTime = maxTime;
-        _time = 0;
+        MaxTime = maxTime;
+        Time = 0;
     }
 
     public void Tick(float timeSpan)
     {
-        _time = Mathf.Clamp(_time + timeSpan, 0, _maxTime);
+        Time = Mathf.Clamp(Time + timeSpan, 0, MaxTime);
 
-        if(_time == _maxTime)
+        if(Time == MaxTime)
         {
             EndedTimer?.Invoke();
         }
