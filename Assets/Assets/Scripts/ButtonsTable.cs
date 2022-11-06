@@ -20,15 +20,18 @@ public class ButtonsTable : MonoBehaviour
     private void OnEnable()
     {
         _buyer.StartedStay += OnStartedStay;
+        _buyer.EndedDialog += OnEndedDialog;
     }
 
     private void OnDisable()
     {
         _buyer.StartedStay -= OnStartedStay;
+        _buyer.EndedDialog -= OnEndedDialog;
     }
 
     private void Start()
     {
+        OffTable();
         BannedClick?.Invoke();
     }
 
@@ -49,11 +52,8 @@ public class ButtonsTable : MonoBehaviour
         switch (type)
         {
             case TypeButton.Ok:
-                _buyer.OnGoToStart(_result == 4);
+                _buyer.TakeAnswer(_result);
                 _state = ButtonsTableState.Forbidden;
-                _group.interactable = false;
-                _result = 0;
-                _timer.ResetTimer();
                 BannedClick?.Invoke();
                 break;
             case TypeButton.Cancel:
@@ -67,10 +67,22 @@ public class ButtonsTable : MonoBehaviour
         _answerText.text = _result.ToString();
     }
 
+    private void OffTable()
+    {
+        _group.interactable = false;
+        _result = 0;
+        _answerText.text = _result.ToString();
+    }
+
     private void OnStartedStay()
     {
         _timer.FillTimer();
         _state = ButtonsTableState.WaitClickOnScreen;
+    }
+
+    private void OnEndedDialog()
+    {
+        OffTable();
     }
 }
 

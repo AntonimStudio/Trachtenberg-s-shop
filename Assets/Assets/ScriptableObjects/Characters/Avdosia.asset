@@ -22,5 +22,5 @@ MonoBehaviour:
   - "\u041E\u0442\u043B\u0438\u0447\u043D\u043E"
   _badResultMessages:
   - "\u0422\u044B \u0442\u0443\u043F\u043E\u0439"
-  _items: {fileID: 0}
-  _valutes: {fileID: 0}
+  _items: {fileID: 11400000, guid: 0c0666ff1a61c1e4e800c3c71ab3b9e1, type: 2}
+  _valutes: {fileID: 11400000, guid: 0eb79650ec02583468e6c112656b193a, type: 2}

@@ -1,27 +1,41 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System;
 
 public class Buyer : MonoBehaviour
 {
-    [SerializeField] private CharacterSO[] _characters;
     [SerializeField] private float _speedMove;
     [SerializeField] private float _timeWaitAfterAnswer;
     [SerializeField] private Transform _questionPoint;
     [SerializeField] private Transform _startPoint;
     [SerializeField] private TextMeshProUGUI _message;
+    [SerializeField] private CanvasGroup _messagePanel;
     [SerializeField] private SpriteRenderer _spriteRenderer;
+    [SerializeField] private Level _level;
+    [SerializeField] private Player _player;
+    [SerializeField] private ResponseTimer _timer;
 
     private int _lastCharacter = -1;
+    private (int Left, int Right) _numbersQuestion;
     private BuyerState _state = BuyerState.GoToQuestion;
 
     public event Action StartedStay;
+    public event Action EndedDialog;
+
+    private void OnEnable()
+    {
+        _timer.EndedTimer += OnEndedTimer;
+    }
+
+    private void OnDisable()
+    {
+        _timer.EndedTimer -= OnEndedTimer;
+    }
 
     private void Start()
     {
-        ChooseCharacter();
+        StartAssembly();
     }
 
     private void Update()
@@ -34,7 +48,8 @@ public class Buyer : MonoBehaviour
                 if(transform.position == _questionPoint.position)
                 {
                     _state = BuyerState.StayOnQuestion;
-                    _message.text = _characters[_lastCharacter].GetRandomStartMessage();
+                    _message.text = _level.Settings.Characters[_lastCharacter].GetRandomStartMessage();
+                    _messagePanel.alpha = 1;
                     StartedStay?.Invoke();
                 }
                 break;
@@ -43,11 +58,48 @@ public class Buyer : MonoBehaviour
                 
                 if(transform.position == _startPoint.position)
                 {
-                    ChooseCharacter();
+                    StartAssembly();
                     _state = BuyerState.GoToQuestion;
                 }
                 break;
         }
+    }
+
+    public void TakeAnswer(int result)
+    {
+        StartCoroutine(GoingToStart());
+
+        if (result == _numbersQuestion.Left * _numbersQuestion.Right)
+        {
+            _message.text = _level.Settings.Characters[_lastCharacter].GetRandomGoodResultMessage();
+            _player.TakeTips(Mathf.RoundToInt(_timer.Value * 100));
+        }
+        else
+        {
+            _message.text = _level.Settings.Characters[_lastCharacter].GetRandomBadResultMessage();
+            _player.TakeWrongBuyer();
+        }
+        _timer.ResetTimer();
+    }
+
+    public void OnAsk()
+    {
+        _message.text = _level.Settings.Characters[_lastCharacter].GetRandomQuestionMessage(_numbersQuestion.Left, _numbersQuestion.Right);
+    }
+
+    private void OnEndedTimer()
+    {
+        StartCoroutine(GoingToStart());
+        _message.text = _level.Settings.Characters[_lastCharacter].GetRandomBadResultMessage();
+        _timer.ResetTimer();
+        _player.TakeWrongBuyer();
+    }
+
+    private void StartAssembly()
+    {
+        ChooseCharacter();
+        _numbersQuestion.Left = _level.Settings.GetLeftRandomValue();
+        _numbersQuestion.Right = _level.Settings.GetRightRandomValue();
     }
 
     private void ChooseCharacter()
@@ -56,30 +108,20 @@ public class Buyer : MonoBehaviour
 
         do
         {
-            newCharacter = UnityEngine.Random.Range(0, _characters.Length);
+            newCharacter = UnityEngine.Random.Range(0, _level.Settings.Characters.Count);
         }
         while (newCharacter == _lastCharacter);
 
         _lastCharacter = newCharacter;
-        _spriteRenderer.sprite = _characters[newCharacter].Sprite;
+        _spriteRenderer.sprite = _level.Settings.Characters[newCharacter].Sprite;
     }
 
     private IEnumerator GoingToStart()
     {
+        EndedDialog?.Invoke();
         yield return new WaitForSeconds(_timeWaitAfterAnswer);
+        _messagePanel.alpha = 0;
         _state = BuyerState.GoToStart;
-    }
-
-    public void OnGoToStart(bool result)
-    {
-        StartCoroutine(GoingToStart());
-        _message.text = result ? _characters[_lastCharacter].GetRandomGoodResultMessage() : 
-            _characters[_lastCharacter].GetRandomBadResultMessage();
-    }
-
-    public void OnAsk()
-    {
-        _message.text = _characters[_lastCharacter].GetRandomQuestionMessage(5, 21);
     }
 }
 

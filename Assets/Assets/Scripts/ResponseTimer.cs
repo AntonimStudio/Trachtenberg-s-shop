@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,19 +9,28 @@ public class ResponseTimer : MonoBehaviour
 
     private Timer _timer;
 
+    public event Action EndedTimer;
+    public event Action ResetedTimer;
+
+    public float Value => 1 - _timer.Time / _timer.MaxTime;
+
     private void Update()
     {
         if(_timer != null)
         {
             _timer.Tick(Time.deltaTime);
-            _slider.value = 1 - _timer.Time / _timer.MaxTime;
+
+            if(_timer != null)
+                _slider.value = 1 - _timer.Time / _timer.MaxTime;
         }
     }
 
     public void ResetTimer()
     {
+        _timer.EndedTimer -= OnEndedTimer;
         _timer = null;
         _slider.value = 0;
+        ResetedTimer?.Invoke();
     }
 
     public void FillTimer()
@@ -31,5 +41,11 @@ public class ResponseTimer : MonoBehaviour
     public void OnTimer()
     {
         _timer = new Timer(_time);
+        _timer.EndedTimer += OnEndedTimer;
+    }
+
+    private void OnEndedTimer()
+    {
+        EndedTimer?.Invoke();
     }
 }
