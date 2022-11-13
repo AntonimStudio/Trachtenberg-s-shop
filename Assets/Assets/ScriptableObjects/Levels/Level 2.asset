@@ -10,12 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fbb05597b38280b4ebede9165d3071f6, type: 3}
-  m_Name: TestLevel
+  m_Name: Level 2
   m_EditorClassIdentifier: 
   _leftValues: 0b000000
-  _minRightValue: 5
-  _maxRightValue: 20
+  _minRightValue: 11
+  _maxRightValue: 500
   _characters:
+  - {fileID: 11400000, guid: 7d1fb090870f0b94696e5c7760af190b, type: 2}
+  - {fileID: 11400000, guid: 341b2218056655d4c991bc082296cf14, type: 2}
   - {fileID: 11400000, guid: f09f183fb8586e94983ce46fac754b18, type: 2}
+  - {fileID: 11400000, guid: dd257bf2638d7584292c73876127f399, type: 2}
+  - {fileID: 11400000, guid: adab6028810c1a646a90c3f705f1a75e, type: 2}
+  - {fileID: 11400000, guid: e45fc1704234b0d4da4623dfffd93881, type: 2}
   _backgroung: {fileID: 21300000, guid: 5e323befe9be79140b9b67820aeb23e3, type: 3}
-  _countQuestions: 3
+  _countQuestions: 12
