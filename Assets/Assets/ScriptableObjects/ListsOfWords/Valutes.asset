@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Valutes
   m_EditorClassIdentifier: 
   _words:
-  - _word1Group: "\u0420\u0443\u0431\u043B\u044C"
-    _word2Group: "\u0420\u0443\u0431\u043B\u044F"
-    _word3Group: "\u0420\u0443\u0431\u043B\u0435\u0439"
+  - _word1Group: "\u0440\u0443\u0431\u043B\u044C"
+    _word2Group: "\u0440\u0443\u0431\u043B\u044F"
+    _word3Group: "\u0440\u0443\u0431\u043B\u0435\u0439"

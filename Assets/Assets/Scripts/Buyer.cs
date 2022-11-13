@@ -65,11 +65,11 @@ public class Buyer : MonoBehaviour
         }
     }
 
-    public void TakeAnswer(int result)
+    public void TakeAnswer(string result)
     {
         StartCoroutine(GoingToStart());
 
-        if (result == _numbersQuestion.Left * _numbersQuestion.Right)
+        if (result == (_numbersQuestion.Left * _numbersQuestion.Right).ToString())
         {
             _message.text = _level.Settings.Characters[_lastCharacter].GetRandomGoodResultMessage();
             _player.TakeTips(Mathf.RoundToInt(_timer.Value * 100));

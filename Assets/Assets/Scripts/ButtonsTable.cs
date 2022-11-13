@@ -12,7 +12,7 @@ public class ButtonsTable : MonoBehaviour
     [SerializeField] private ResponseTimer _timer;
 
     private ButtonsTableState _state;
-    private int _result;
+    private string _result;
 
     public event Action AllowedClick;
     public event Action BannedClick;
@@ -57,10 +57,11 @@ public class ButtonsTable : MonoBehaviour
                 BannedClick?.Invoke();
                 break;
             case TypeButton.Cancel:
-                _result /= 10;
+                _result = _result.Remove(0,1);
                 break;
             default:
-                _result = _result * 10 + (int)type;
+
+                _result = ((int)type).ToString() + _result;  /////????
                 break;
         }
 
@@ -70,7 +71,7 @@ public class ButtonsTable : MonoBehaviour
     private void OffTable()
     {
         _group.interactable = false;
-        _result = 0;
+        _result = "";
         _answerText.text = _result.ToString();
     }
 
