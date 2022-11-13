@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class ButtonOnMenu : MonoBehaviour
+public class ButtonOnMenuToGame : MonoBehaviour
 {
     public static LevelSettings CurrentLevel { get; private set; }
 

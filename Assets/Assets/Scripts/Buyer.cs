@@ -15,13 +15,20 @@ public class Buyer : MonoBehaviour
     [SerializeField] private Level _level;
     [SerializeField] private Player _player;
     [SerializeField] private ResponseTimer _timer;
+    [Space(20)]
+    [Header("Настройки анимации")]
+    [SerializeField] private AnimationCurve _curve;
+    [SerializeField] private float _defaultY;
 
     private int _lastCharacter = -1;
+    private int _countAnswers;
     private (int Left, int Right) _numbersQuestion;
     private BuyerState _state = BuyerState.GoToQuestion;
+    private bool _endGame;
 
     public event Action StartedStay;
     public event Action EndedDialog;
+    public event Action EndedLevel;
 
     private void OnEnable()
     {
@@ -36,33 +43,55 @@ public class Buyer : MonoBehaviour
     private void Start()
     {
         StartAssembly();
+        _countAnswers = 0;
     }
 
     private void Update()
     {
-        switch (_state)
+        if(_endGame == false)
         {
-            case BuyerState.GoToQuestion:
-                transform.position = Vector3.MoveTowards(transform.position, _questionPoint.position, _speedMove * Time.deltaTime);
+            Vector3 newPosition;
 
-                if(transform.position == _questionPoint.position)
-                {
-                    _state = BuyerState.StayOnQuestion;
-                    _message.text = _level.Settings.Characters[_lastCharacter].GetRandomStartMessage();
-                    _messagePanel.alpha = 1;
-                    StartedStay?.Invoke();
-                }
-                break;
-            case BuyerState.GoToStart:
-                transform.position = Vector3.MoveTowards(transform.position, _startPoint.position, _speedMove * Time.deltaTime);
-                
-                if(transform.position == _startPoint.position)
-                {
-                    StartAssembly();
-                    _state = BuyerState.GoToQuestion;
-                }
-                break;
-        }
+            switch (_state)
+            {
+                case BuyerState.GoToQuestion:
+                    newPosition = new Vector3();
+                    newPosition.x = Mathf.MoveTowards(transform.position.x, _questionPoint.position.x, _speedMove * Time.deltaTime);
+                    newPosition.y = _defaultY + _curve.Evaluate((newPosition.x-_startPoint.position.x)/(_questionPoint.position.x- _startPoint.position.x));
+                    newPosition.z = transform.position.z;
+                    transform.position = newPosition;
+
+                    if (transform.position.x == _questionPoint.position.x)
+                    {
+                        _state = BuyerState.StayOnQuestion;
+                        _message.text = _level.Settings.Characters[_lastCharacter].GetRandomStartMessage();
+                        _messagePanel.alpha = 1;
+                        StartedStay?.Invoke();
+                    }
+                    break;
+                case BuyerState.GoToStart:
+                    newPosition = new Vector3();
+                    newPosition.x = Mathf.MoveTowards(transform.position.x, _startPoint.position.x, _speedMove * Time.deltaTime);
+                    newPosition.y = _defaultY + _curve.Evaluate(1 - (newPosition.x - _questionPoint.position.x) / (_startPoint.position.x - _questionPoint.position.x));
+                    newPosition.z = transform.position.z;
+                    transform.position = newPosition;
+
+                    if (transform.position.x == _startPoint.position.x)
+                    {
+                        if(_countAnswers >= _level.Settings.CountQuestions)
+                        {
+                            _endGame = true;
+                            EndedLevel?.Invoke();
+                        }
+                        else
+                        {
+                            StartAssembly();
+                            _state = BuyerState.GoToQuestion;
+                        }
+                    }
+                    break;
+            }
+        }   
     }
 
     public void TakeAnswer(string result)
@@ -80,6 +109,7 @@ public class Buyer : MonoBehaviour
             _player.TakeWrongBuyer();
         }
         _timer.ResetTimer();
+        _countAnswers++;
     }
 
     public void OnAsk()

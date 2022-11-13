@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
 
     public int CountBuyers => _countBuyers;
     public int CountWrongBuyers => _countWrongBuyers;
+    public int Tips => _tips;
 
     private void Start()
     {

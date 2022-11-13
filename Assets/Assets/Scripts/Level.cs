@@ -8,8 +8,8 @@ public class Level : MonoBehaviour
     
     private void Start()
     {
-        _background.sprite = ButtonOnMenu.CurrentLevel.Background;
+        _background.sprite = ButtonOnMenuToGame.CurrentLevel.Background;
     }
 
-    public LevelSettings Settings => ButtonOnMenu.CurrentLevel;
+    public LevelSettings Settings => ButtonOnMenuToGame.CurrentLevel;
 }

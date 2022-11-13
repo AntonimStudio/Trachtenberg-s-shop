@@ -1,0 +1,58 @@
+using System.Collections;
+using TMPro;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class TutorialController : MonoBehaviour
+{
+    [SerializeField] private TextMeshProUGUI _text;
+    [SerializeField] private SpriteRenderer _sprite;
+    [SerializeField] private float _timeTypeSymbol;
+
+    private int _index;
+    private bool _canClick;
+
+    private void Start()
+    {
+        SetMessage(0);
+    }
+
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(0) && _canClick)
+        {
+            SetMessage(_index + 1);
+        }
+    }
+
+    private void SetMessage(int newIndex)
+    {
+        _canClick = false;
+
+        if (newIndex < ButtonOnMenuToTutorial.CurrentTutorial.CountMessages)
+        {
+            _index = newIndex;
+            StartCoroutine(TypingText(ButtonOnMenuToTutorial.CurrentTutorial[_index].Message));
+            _sprite.sprite = ButtonOnMenuToTutorial.CurrentTutorial[_index].Sprite;
+        }
+        else
+        {
+            SceneManager.LoadScene(0);
+        }
+    }
+
+    private IEnumerator TypingText(string text)
+    {
+        _text.text = "";
+        WaitForSeconds timeWait = new WaitForSeconds(_timeTypeSymbol);
+
+        for(int i = 0; i<text.Length; i++)
+        {
+            _text.text += text[i];
+            yield return timeWait;
+        }
+
+        _canClick = true;
+        yield return null;
+    }
+}
