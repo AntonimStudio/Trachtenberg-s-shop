@@ -2,11 +2,14 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
 
 public class TutorialController : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI _text;
-    [SerializeField] private SpriteRenderer _sprite;
+    [SerializeField] private SpriteRenderer _spriteMadam;
+    [SerializeField] private GameObject _imageDialog;
     [SerializeField] private float _timeTypeSymbol;
 
     private int _index;
@@ -33,7 +36,8 @@ public class TutorialController : MonoBehaviour
         {
             _index = newIndex;
             StartCoroutine(TypingText(ButtonOnMenuToTutorial.CurrentTutorial[_index].Message));
-            _sprite.sprite = ButtonOnMenuToTutorial.CurrentTutorial[_index].Sprite;
+            _spriteMadam.sprite = ButtonOnMenuToTutorial.CurrentTutorial[_index].SpriteCharacter;
+            _imageDialog.GetComponent<Image>().sprite = ButtonOnMenuToTutorial.CurrentTutorial[_index].SpriteDialog;
         }
         else
         {

@@ -21,14 +21,17 @@ public class TutorialSettings : ScriptableObject
 public class StepInTutorial
 {
     [SerializeField] private string _message;
-    [SerializeField] private Sprite _sprite;
+    [SerializeField] private Sprite _spriteCharacter;
+    [SerializeField] private Sprite _spriteDialog;
 
     public string Message => _message;
-    public Sprite Sprite => _sprite;
+    public Sprite SpriteCharacter => _spriteCharacter;
+    public Sprite SpriteDialog => _spriteDialog;
 
-    public StepInTutorial(string message, Sprite sprite)
+    public StepInTutorial(string message, Sprite spriteCharacter, Sprite spriteDialog)
     {
         _message = message;
-        _sprite = sprite;
+        _spriteCharacter = spriteCharacter;
+        _spriteDialog = spriteDialog;
     }
 }

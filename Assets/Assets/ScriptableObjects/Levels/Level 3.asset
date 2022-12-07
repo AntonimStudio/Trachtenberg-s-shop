@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbb05597b38280b4ebede9165d3071f6, type: 3}
   m_Name: Level 3
   m_EditorClassIdentifier: 
-  _leftValues: 0b000000
-  _minRightValue: 5
-  _maxRightValue: 20
+  _leftValues: 0c000000
+  _minRightValue: 11
+  _maxRightValue: 666
   _characters:
   - {fileID: 11400000, guid: 7d1fb090870f0b94696e5c7760af190b, type: 2}
   - {fileID: 11400000, guid: 341b2218056655d4c991bc082296cf14, type: 2}
