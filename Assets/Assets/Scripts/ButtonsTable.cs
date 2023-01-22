@@ -64,8 +64,8 @@ public class ButtonsTable : MonoBehaviour
                 _result = ((int)type).ToString() + _result;  /////????
                 break;
         }
-
-        _answerText.text = _result.ToString();
+        Debug.Log(_result.ToString());
+        _answerText.text = _result;
     }
 
     private void OffTable()

@@ -24,9 +24,9 @@ public class WindowEndGame : MonoBehaviour
         _group.interactable = true;
         _group.blocksRaycasts = true;
         string res = "";
-        res += _player.CountBuyers + "\n";
-        res += _player.CountBuyers - _player.CountWrongBuyers + "\n";
-        res += _player.CountWrongBuyers + "\n";
+        res += _player.CountBuyers + "\n" + "\n" + "\n";
+        res += _player.CountBuyers - _player.CountWrongBuyers + "\n" + "\n" + "\n";
+        res += _player.CountWrongBuyers + "\n" + "\n" + "\n";
         res += _player.Tips;
         _text.text = res;
     }
