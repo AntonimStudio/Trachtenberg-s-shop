@@ -12,9 +12,7 @@ public class ButtonsTable : MonoBehaviour
     [SerializeField] private ResponseTimer _timer;
     [SerializeField] private Transform _inputImage;
     [SerializeField] private Transform _inputPointPosition;
-    private int coefExten;
     private string prevstroka;
-    private bool ass;
 
     private ButtonsTableState _state;
     private string _result;
@@ -38,7 +36,6 @@ public class ButtonsTable : MonoBehaviour
     {
         OffTable();
         BannedClick?.Invoke();
-        coefExten = 0;
         prevstroka = "";
     }
 
