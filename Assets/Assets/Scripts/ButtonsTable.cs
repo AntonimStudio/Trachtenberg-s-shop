@@ -10,6 +10,11 @@ public class ButtonsTable : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _answerText;
     [SerializeField] private CanvasGroup _group;
     [SerializeField] private ResponseTimer _timer;
+    [SerializeField] private Transform _inputImage;
+    [SerializeField] private Transform _inputPointPosition;
+    private int coefExten;
+    private string prevstroka;
+    private bool ass;
 
     private ButtonsTableState _state;
     private string _result;
@@ -33,6 +38,8 @@ public class ButtonsTable : MonoBehaviour
     {
         OffTable();
         BannedClick?.Invoke();
+        coefExten = 0;
+        prevstroka = "";
     }
 
     private void Update()
@@ -58,20 +65,29 @@ public class ButtonsTable : MonoBehaviour
                 break;
             case TypeButton.Cancel:
                 _result = _result.Remove(0,1);
+                if (_inputImage.transform.position.x < _inputPointPosition.transform.position.x -32) 
+                    _inputImage.transform.position = new Vector3(_inputImage.transform.position.x + 32, 
+                        _inputImage.transform.position.y, _inputImage.transform.position.z);
                 break;
             default:
-
-                _result = ((int)type).ToString() + _result;  /////????
+                if (_result.Length < 14) _result = ((int)type).ToString() + _result;  /////????
                 break;
         }
-        Debug.Log(_result.ToString());
         _answerText.text = _result;
+        if (_result.Length < 15 && prevstroka.Length < _result.Length && _result.Length > 10)
+            {
+                _inputImage.transform.position = new Vector3(_inputImage.transform.position.x - 32, _inputImage.transform.position.y, _inputImage.transform.position.z);
+            }
+        prevstroka = _result;
+
+
     }
 
     private void OffTable()
     {
         _group.interactable = false;
         _result = "";
+        _inputImage.transform.position = new Vector3(_inputPointPosition.transform.position.x, _inputPointPosition.transform.position.y, _inputPointPosition.transform.position.z);
         _answerText.text = _result.ToString();
     }
 

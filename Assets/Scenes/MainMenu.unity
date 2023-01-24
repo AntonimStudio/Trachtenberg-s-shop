@@ -178,7 +178,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _tutorial: {fileID: 11400000, guid: f8e012d3c5b4e4844b069aaeb5b18f06, type: 2}
   _button: {fileID: 97179447}
-  _numberScene: 2
+  _numberScene: 3
 --- !u!114 &97179447
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -392,7 +392,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _tutorial: {fileID: 11400000, guid: 65015df28245bb045b136c09027435db, type: 2}
   _button: {fileID: 142092751}
-  _numberScene: 2
+  _numberScene: 3
 --- !u!114 &142092751
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -801,7 +801,7 @@ MonoBehaviour:
   _listOfLevels: {fileID: 11400000, guid: cbf0261c72dc6874685edeb9ec9155d6, type: 2}
   _numberLevel: 2
   _button: {fileID: 241258288}
-  _numberScene: 1
+  _numberScene: 2
 --- !u!114 &241258288
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -940,7 +940,7 @@ MonoBehaviour:
   _listOfLevels: {fileID: 11400000, guid: cbf0261c72dc6874685edeb9ec9155d6, type: 2}
   _numberLevel: 0
   _button: {fileID: 416456828}
-  _numberScene: 1
+  _numberScene: 2
 --- !u!114 &416456828
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1752,7 +1752,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _tutorial: {fileID: 11400000, guid: 65015df28245bb045b136c09027435db, type: 2}
   _button: {fileID: 1348955413}
-  _numberScene: 2
+  _numberScene: 3
 --- !u!1 &1454195451
 GameObject:
   m_ObjectHideFlags: 0
@@ -2227,7 +2227,7 @@ MonoBehaviour:
   _listOfLevels: {fileID: 11400000, guid: cbf0261c72dc6874685edeb9ec9155d6, type: 2}
   _numberLevel: 1
   _button: {fileID: 1702941216}
-  _numberScene: 1
+  _numberScene: 2
 --- !u!114 &1702941216
 MonoBehaviour:
   m_ObjectHideFlags: 0

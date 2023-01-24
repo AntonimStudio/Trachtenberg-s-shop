@@ -1169,7 +1169,7 @@ MonoBehaviour:
   _text: {fileID: 176682206}
   _spriteMadam: {fileID: 187790058}
   _imageDialog: {fileID: 1497312947}
-  _timeTypeSymbol: 0.05
+  _timeTypeSymbol: 0.09
 --- !u!4 &542338855
 Transform:
   m_ObjectHideFlags: 0
@@ -2403,7 +2403,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72211f75ff4e4b043a84b71def82897f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _numberScene: 0
+  _numberScene: 1
 --- !u!114 &1306122371
 MonoBehaviour:
   m_ObjectHideFlags: 0
