@@ -28,6 +28,8 @@ public class WindowEndGame : MonoBehaviour
         res += _player.CountBuyers - _player.CountWrongBuyers + "\n" + "\n" + "\n";
         res += _player.CountWrongBuyers + "\n" + "\n" + "\n";
         res += _player.Tips;
+        PlayerPrefs.SetInt("Tips", PlayerPrefs.GetInt("Tips") + _player.Tips);
+        PlayerPrefs.Save();
         _text.text = res;
     }
 }

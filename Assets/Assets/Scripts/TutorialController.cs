@@ -41,7 +41,7 @@ public class TutorialController : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(2);
         }
     }
 
@@ -50,7 +50,7 @@ public class TutorialController : MonoBehaviour
         _text.text = "";
         WaitForSeconds timeWait = new WaitForSeconds(_timeTypeSymbol);
 
-        for(int i = 0; i<text.Length; i++)
+        for (int i = 0; i < text.Length; i++)
         {
             _text.text += text[i];
             yield return timeWait;

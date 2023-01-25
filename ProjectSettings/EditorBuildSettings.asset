@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/EnterScene.unity
     guid: dfc2fdf78aa083947a5419ef9c1d9d36
   - enabled: 1
+    path: Assets/Scenes/ChoiceMenu.unity
+    guid: cffca765b7e33a8469316ab1d86303b9
+  - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 83883f3cea2fbf242a9e05c012c28ade
   - enabled: 1
@@ -17,4 +20,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Tutorial.unity
     guid: 1eed8f50db7af4d4990655b17e552d88
+  - enabled: 1
+    path: Assets/Scenes/In-game Store.unity
+    guid: cab98c8036c3d6348ad81918d1dcabbd
+  - enabled: 1
+    path: Assets/Scenes/MiniGameMenu.unity
+    guid: 418b634ef0429b74b9b9ec1c5b39759c
   m_configObjects: {}
