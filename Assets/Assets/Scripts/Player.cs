@@ -4,6 +4,8 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI _text;
+    [SerializeField] private AudioClip _cashSound;
+    private new AudioSource audio;
 
     private int _tips;
     private int _countBuyers;
@@ -15,6 +17,7 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
+        audio = GetComponent<AudioSource>();
         _countBuyers = 0;
         _countWrongBuyers = 0;
         _tips = 0;
@@ -25,6 +28,7 @@ public class Player : MonoBehaviour
     {
         _tips += tips;
         _countBuyers += 1;
+        playSound(_cashSound);
         SetText();
     }
 
@@ -32,6 +36,12 @@ public class Player : MonoBehaviour
     {
         _countBuyers += 1;
         _countWrongBuyers += 1;
+    }
+
+    private void playSound(AudioClip clip)
+    {
+        audio.clip = clip;
+        audio.Play();
     }
 
     private void SetText()

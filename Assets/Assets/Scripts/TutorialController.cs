@@ -11,6 +11,7 @@ public class TutorialController : MonoBehaviour
     [SerializeField] private SpriteRenderer _spriteMadam;
     [SerializeField] private GameObject _imageDialog;
     [SerializeField] private float _timeTypeSymbol;
+    private string _unlockedLevels;
 
     private int _index;
     private bool _canClick;
@@ -41,6 +42,12 @@ public class TutorialController : MonoBehaviour
         }
         else
         {
+            _unlockedLevels = PlayerPrefs.GetString("UnlockedLevels");
+            Debug.Log(_unlockedLevels);
+            _unlockedLevels = _unlockedLevels.Remove(0, 1);
+            _unlockedLevels = _unlockedLevels.Insert(0, "1");
+            PlayerPrefs.SetString("UnlockedLevels", _unlockedLevels);
+            Debug.Log(_unlockedLevels);
             SceneManager.LoadScene(2);
         }
     }

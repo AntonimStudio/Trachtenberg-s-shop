@@ -21,7 +21,7 @@ MonoBehaviour:
       \u0440\u0435\u0431\u044F\u0442\u043A\u0430\u043C \u0434\u043E\u0431\u0430\u0432\u0438\u0442\u044C
       \u043C\u0435\u043D\u044F \u0432 \u0438\u0433\u0440\u0443"
     _spriteCharacter: {fileID: 21300000, guid: 256b615bfe83aa3479e6c693bbe2cd95, type: 3}
-    _spriteDialog: {fileID: 21300000, guid: e4c86ad097b8a4544b2855980847db69, type: 3}
+    _spriteDialog: {fileID: 21300000, guid: 128d8aeecc5cca142b36f67bfed451ce, type: 3}
   - _message: "\u042F \u0431\u0443\u0434\u0443 \u043E\u0447\u0435\u043D\u044C \u0432\u0430\u043C
       \u043F\u0440\u0438\u0437\u043D\u0430\u0442\u0435\u043B\u044C\u043D\u0430"
     _spriteCharacter: {fileID: 21300000, guid: 7a031911158da1e40a86409b48d1e224, type: 3}

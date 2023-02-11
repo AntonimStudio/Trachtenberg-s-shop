@@ -51,7 +51,6 @@ public class Buyer : MonoBehaviour
         if(_endGame == false)
         {
             Vector3 newPosition;
-
             switch (_state)
             {
                 case BuyerState.GoToQuestion:
@@ -123,6 +122,7 @@ public class Buyer : MonoBehaviour
         _message.text = _level.Settings.Characters[_lastCharacter].GetRandomBadResultMessage();
         _timer.ResetTimer();
         _player.TakeWrongBuyer();
+        _countAnswers++; //!!!!!!!!!!!
     }
 
     private void StartAssembly()

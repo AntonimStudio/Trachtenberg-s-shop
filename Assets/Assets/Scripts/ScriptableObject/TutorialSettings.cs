@@ -4,8 +4,10 @@ using System;
 [CreateAssetMenu(fileName = "Tutorial", menuName = "ScriptableObjects/Tutorial")]
 public class TutorialSettings : ScriptableObject
 {
+    [SerializeField] private int _number;
     [SerializeField] private StepInTutorial[] _messages;
 
+    public int Number => _number;
     public int CountMessages => _messages.Length;
 
     public StepInTutorial this[int i]

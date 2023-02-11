@@ -8,8 +8,14 @@ public class ButtonOnTable : MonoBehaviour
     [SerializeField] private TypeButton _type;
     [SerializeField] private ButtonsTable _table;
     [SerializeField] private Button _button;
-
+    [SerializeField] private AudioClip _buttonSound;
+    private new AudioSource audio;
     private bool _canClick;
+
+    private void Start()
+    {
+        audio = GetComponent<AudioSource>();
+    }
 
     private void OnEnable()
     {
@@ -31,8 +37,19 @@ public class ButtonOnTable : MonoBehaviour
 
     private void OnClick()
     {
-        if(_canClick)
+        if (_canClick)
+        {
+            
             _table.TakeInformation(_type);
+            playSound(_buttonSound);
+        }
+
+    }
+
+    private void playSound(AudioClip clip)
+    {
+        audio.clip = clip;
+        audio.Play();
     }
 }
 
