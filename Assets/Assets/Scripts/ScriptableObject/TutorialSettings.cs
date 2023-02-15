@@ -6,8 +6,6 @@ public class TutorialSettings : ScriptableObject
 {
     [SerializeField] private int _number;
     [SerializeField] private StepInTutorial[] _messages;
-
-    public int Number => _number;
     public int CountMessages => _messages.Length;
 
     public StepInTutorial this[int i]
@@ -17,6 +15,10 @@ public class TutorialSettings : ScriptableObject
             return _messages[i];
         }
     }
+
+    public int Number => _number;
+
+
 }
 
 [Serializable]

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41338c7e7b26863499b9d3ee2f6be11f, type: 3}
   m_Name: Tutorial 1
   m_EditorClassIdentifier: 
+  _number: 0
   _messages:
   - _message: "\u0417\u0434\u0440\u0430\u0432\u0441\u0442\u0432\u0443\u0439\u0442\u0435,
       \u043C\u0438\u0441\u0442\u0435\u0440 \u0416\u0435\u043C\u0447\u0443\u0436\u043D\u0438\u043A\u043E\u0432"

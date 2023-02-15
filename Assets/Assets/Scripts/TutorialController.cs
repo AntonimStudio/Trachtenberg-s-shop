@@ -43,11 +43,9 @@ public class TutorialController : MonoBehaviour
         else
         {
             _unlockedLevels = PlayerPrefs.GetString("UnlockedLevels");
-            Debug.Log(_unlockedLevels);
-            _unlockedLevels = _unlockedLevels.Remove(0, 1);
-            _unlockedLevels = _unlockedLevels.Insert(0, "1");
+            _unlockedLevels = _unlockedLevels.Remove(ButtonOnMenuToTutorial.CurrentTutorial.Number, 1);
+            _unlockedLevels = _unlockedLevels.Insert(ButtonOnMenuToTutorial.CurrentTutorial.Number, "1");
             PlayerPrefs.SetString("UnlockedLevels", _unlockedLevels);
-            Debug.Log(_unlockedLevels);
             SceneManager.LoadScene(2);
         }
     }

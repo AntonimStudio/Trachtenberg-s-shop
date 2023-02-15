@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbb05597b38280b4ebede9165d3071f6, type: 3}
   m_Name: Level 2
   m_EditorClassIdentifier: 
+  _number: 1
   _leftValues: 0b000000
   _minRightValue: 11
   _maxRightValue: 666
