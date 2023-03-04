@@ -84,7 +84,7 @@ public class ButtonSmoothMovement : MonoBehaviour
         {
             _isLeftClicked = true;
         }
-        
+
     }
 
     private void OnDisable()
