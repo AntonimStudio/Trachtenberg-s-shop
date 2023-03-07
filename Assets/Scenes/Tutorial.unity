@@ -1297,7 +1297,8 @@ MonoBehaviour:
   _text: {fileID: 176682206}
   _spriteMadam: {fileID: 187790058}
   _imageDialog: {fileID: 1497312947}
-  _timeTypeSymbol: 0.03
+  _timeTypeSymbolDefault: 0.1
+  _timeTypeSymbolSpeedUp: 0.001
 --- !u!4 &542338855
 Transform:
   m_ObjectHideFlags: 0

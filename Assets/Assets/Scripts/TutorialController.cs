@@ -10,29 +10,31 @@ public class TutorialController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _text;
     [SerializeField] private SpriteRenderer _spriteMadam;
     [SerializeField] private GameObject _imageDialog;
-    [SerializeField] private float _timeTypeSymbol;
+    [SerializeField] private float _timeTypeSymbolDefault;
+    [SerializeField] private float _timeTypeSymbolSpeedUp;
+    private float _timeTypeSymbolCurrent;
     private string _unlockedLevels;
-
     private int _index;
-    private bool _canClick;
+    private bool _isWriting;
 
     private void Start()
     {
-        SetMessage(0);
+        _timeTypeSymbolCurrent = _timeTypeSymbolDefault;
+        _isWriting = false;
+         SetMessage(0);
     }
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0) && _canClick)
+        if (Input.GetMouseButtonDown(0))
         {
-            SetMessage(_index + 1);
+            if (_isWriting) _timeTypeSymbolCurrent = _timeTypeSymbolSpeedUp;
+            else SetMessage(_index + 1);
         }
     }
 
     private void SetMessage(int newIndex)
     {
-        _canClick = false;
-
         if (newIndex < ButtonOnMenuToTutorial.CurrentTutorial.CountMessages)
         {
             _index = newIndex;
@@ -52,16 +54,16 @@ public class TutorialController : MonoBehaviour
 
     private IEnumerator TypingText(string text)
     {
+        _isWriting = true;
         _text.text = "";
-        WaitForSeconds timeWait = new WaitForSeconds(_timeTypeSymbol);
 
         for (int i = 0; i < text.Length; i++)
         {
             _text.text += text[i];
-            yield return timeWait;
+            yield return new WaitForSeconds(_timeTypeSymbolCurrent);
         }
-
-        _canClick = true;
+        _isWriting = false;
+        _timeTypeSymbolCurrent = _timeTypeSymbolDefault;
         yield return null;
     }
 }
