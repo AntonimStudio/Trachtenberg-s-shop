@@ -4,8 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Music
   - I am an idiot
+  - Music
   layers:
   - Default
   - TransparentFX
