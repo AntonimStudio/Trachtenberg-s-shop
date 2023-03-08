@@ -31,32 +31,32 @@ public class ButtonSmoothMovement : MonoBehaviour
         {
             _wall.SetActive(true);
             _screens[_numberMenu].transform.position = Vector3.MoveTowards(_screens[_numberMenu].transform.position, _points[0].position, Time.deltaTime * _speed);
-
             _screens[_numberMenu + 1].transform.position = Vector3.MoveTowards(_screens[_numberMenu + 1].transform.position, _points[1].position, Time.deltaTime * _speed);
             if (_screens[_numberMenu].transform.position == _points[0].position)
             {
+                _numberMenu += 1;
+                BSM.ChangeNumberMenu(_numberMenu);
+                Debug.Log(_numberMenu);
                 _isRightClicked = false;
                 _isLeftClicked = false;
-                _numberMenu += 1;
                 _wall.SetActive(false);
-                BSM.ChangeNumberMenu(_numberMenu);
             }
         } 
         else { _isRightClicked = false; }
 
         if (_isLeftClicked && _numberMenu > 0)
         {
-            
-            _screens[_numberMenu].transform.position = Vector3.MoveTowards(_screens[_numberMenu].transform.position, _points[2].position, Time.deltaTime * _speed);
             _wall.SetActive(true);
+            _screens[_numberMenu].transform.position = Vector3.MoveTowards(_screens[_numberMenu].transform.position, _points[2].position, Time.deltaTime * _speed);
             _screens[_numberMenu - 1].transform.position = Vector3.MoveTowards(_screens[_numberMenu - 1].transform.position, _points[1].position, Time.deltaTime * _speed);
             if (_screens[_numberMenu].transform.position == _points[2].position)
             {
+                _numberMenu -= 1;
+                BSM.ChangeNumberMenu(_numberMenu);
+                Debug.Log(_numberMenu);
                 _isLeftClicked = false;
                 _isRightClicked = false;
-                _numberMenu -= 1;
                 _wall.SetActive(false);
-                BSM.ChangeNumberMenu(_numberMenu);
             }
         }
         else { _isLeftClicked = false; }
@@ -75,16 +75,8 @@ public class ButtonSmoothMovement : MonoBehaviour
 
     private void OnClick()
     {
-        if (_isRight)
-        {
-            _isRightClicked = true;
-
-        }
-        else
-        {
-            _isLeftClicked = true;
-        }
-
+        if (_isRight){ _isRightClicked = true;}
+        else{_isLeftClicked = true;}
     }
 
     private void OnDisable()

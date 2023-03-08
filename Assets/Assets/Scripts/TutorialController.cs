@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class TutorialController : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI _text;
-    [SerializeField] private SpriteRenderer _spriteMadam;
+    [SerializeField] private GameObject _imageMadam;
     [SerializeField] private GameObject _imageDialog;
     [SerializeField] private float _timeTypeSymbolDefault;
     [SerializeField] private float _timeTypeSymbolSpeedUp;
@@ -39,7 +39,7 @@ public class TutorialController : MonoBehaviour
         {
             _index = newIndex;
             StartCoroutine(TypingText(ButtonOnMenuToTutorial.CurrentTutorial[_index].Message));
-            _spriteMadam.sprite = ButtonOnMenuToTutorial.CurrentTutorial[_index].SpriteCharacter;
+            _imageMadam.GetComponent<Image>().sprite = ButtonOnMenuToTutorial.CurrentTutorial[_index].SpriteCharacter;
             _imageDialog.GetComponent<Image>().sprite = ButtonOnMenuToTutorial.CurrentTutorial[_index].SpriteDialog;
         }
         else
