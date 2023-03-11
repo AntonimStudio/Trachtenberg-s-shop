@@ -15,12 +15,12 @@ public class Savings : MonoBehaviour
 
         if (!PlayerPrefs.HasKey("UnlockedLevels"))
         {
-            PlayerPrefs.SetString("UnlockedLevels", "00000000000000000000");
+            PlayerPrefs.SetInt("UnlockedLevels", -1);
         }
-
         if (!PlayerPrefs.HasKey("UnlockedTutorials"))
         {
-            PlayerPrefs.SetString("UnlockedTutorials", "10000000000000000000");
+            PlayerPrefs.SetInt("UnlockedTutorials", 0);
         }
+        PlayerPrefs.SetInt("UnlockedLevels", 27);
     }
 }

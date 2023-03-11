@@ -13,7 +13,7 @@ public class TutorialController : MonoBehaviour
     [SerializeField] private float _timeTypeSymbolDefault;
     [SerializeField] private float _timeTypeSymbolSpeedUp;
     private float _timeTypeSymbolCurrent;
-    private string _unlockedLevels;
+    private int _unlockedLevels;
     private int _index;
     private bool _isWriting;
 
@@ -44,10 +44,8 @@ public class TutorialController : MonoBehaviour
         }
         else
         {
-            _unlockedLevels = PlayerPrefs.GetString("UnlockedLevels");
-            _unlockedLevels = _unlockedLevels.Remove(ButtonOnMenuToTutorial.CurrentTutorial.Number, 1);
-            _unlockedLevels = _unlockedLevels.Insert(ButtonOnMenuToTutorial.CurrentTutorial.Number, "1");
-            PlayerPrefs.SetString("UnlockedLevels", _unlockedLevels);
+            _unlockedLevels = PlayerPrefs.GetInt("UnlockedLevels") + 1;
+            PlayerPrefs.SetInt("UnlockedLevels", _unlockedLevels);                                                 ////////////!!!!!!!!!!!
             SceneManager.LoadScene(2);
         }
     }

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05bef61a33ed0d14baa53009581ed769, type: 3}
   m_Name: Vamessa
   m_EditorClassIdentifier: 
-  _sprite: {fileID: 0}
+  _sprite: {fileID: 21300000, guid: e7b08eb076bcb9d4ea70465bf3327799, type: 3}
   _startMessages: []
   _questionMessages: []
   _goodResultMessages: []

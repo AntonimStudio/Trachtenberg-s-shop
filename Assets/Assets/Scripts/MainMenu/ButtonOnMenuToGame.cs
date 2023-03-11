@@ -10,7 +10,7 @@ public class ButtonOnMenuToGame : MonoBehaviour
     [SerializeField] private int _numberLevel;
     [SerializeField] private Button _button;
     [SerializeField] private int _numberScene;
-    private string _unlockedLevels;
+    private int _unlockedLevels;
 
     private void OnEnable()
     {
@@ -24,15 +24,17 @@ public class ButtonOnMenuToGame : MonoBehaviour
 
     private void Start()
     {
-        _unlockedLevels = PlayerPrefs.GetString("UnlockedLevels");
+        _unlockedLevels = PlayerPrefs.GetInt("UnlockedLevels");
     }
 
     private void OnClick()
     {
-        if (_unlockedLevels[_numberLevel] == '1')
+        if (_numberLevel <= _unlockedLevels)
         {
             CurrentLevel = _listOfLevels.Levels[_numberLevel];
             SceneManager.LoadScene(_numberScene);
         }
+
+
     }   
 }

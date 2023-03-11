@@ -11,7 +11,7 @@ public class ButtonOnMenuToTutorial : MonoBehaviour
     [SerializeField] private Button _button;
     [SerializeField] public int _numberTutorial;
     [SerializeField] private int _numberScene;
-    private string _unlockedTutorials;
+    private int _unlockedTutorials;
 
     private void OnEnable()
     {
@@ -25,12 +25,12 @@ public class ButtonOnMenuToTutorial : MonoBehaviour
 
     private void Start()
     {
-        _unlockedTutorials = PlayerPrefs.GetString("UnlockedTutorials");
+        _unlockedTutorials = PlayerPrefs.GetInt("UnlockedTutorials");
     }
 
     private void OnClick()
     {
-        if (_unlockedTutorials[_numberTutorial] == '1')
+        if (_numberTutorial <= _unlockedTutorials)
         {
             CurrentTutorial = _tutorial;
             SceneManager.LoadScene(_numberScene);
