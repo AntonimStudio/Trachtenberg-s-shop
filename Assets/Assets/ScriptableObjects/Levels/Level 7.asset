@@ -17,11 +17,13 @@ MonoBehaviour:
   _minRightValue: 999
   _maxRightValue: 9999
   _characters:
-  - {fileID: 11400000, guid: 979f8d55ae84b8c4f93ce0a1de34f99d, type: 2}
   - {fileID: 11400000, guid: 1584c76494d958a43995abf9f1abc705, type: 2}
   - {fileID: 11400000, guid: f6d9cdd3f3aae52428447ccf43703735, type: 2}
   - {fileID: 11400000, guid: b65b77aa5ec1aa54e8ec015ceb2b126e, type: 2}
-  - {fileID: 11400000, guid: cff0ae22e3f65e14c85b7408fcd0ea8b, type: 2}
   - {fileID: 11400000, guid: 5781765bfaaf2ac4eb66610cbd426351, type: 2}
+  - {fileID: 11400000, guid: cff0ae22e3f65e14c85b7408fcd0ea8b, type: 2}
+  - {fileID: 11400000, guid: cff0ae22e3f65e14c85b7408fcd0ea8b, type: 2}
+  - {fileID: 11400000, guid: 979f8d55ae84b8c4f93ce0a1de34f99d, type: 2}
+  - {fileID: 11400000, guid: 979f8d55ae84b8c4f93ce0a1de34f99d, type: 2}
   _backgroung: {fileID: 21300000, guid: 5e323befe9be79140b9b67820aeb23e3, type: 3}
   _countQuestions: 15
