@@ -21,7 +21,7 @@ public class TutorialController : MonoBehaviour
     {
         _timeTypeSymbolCurrent = _timeTypeSymbolDefault;
         _isWriting = false;
-         SetMessage(0);
+        SetMessage(0);
     }
 
     private void Update()

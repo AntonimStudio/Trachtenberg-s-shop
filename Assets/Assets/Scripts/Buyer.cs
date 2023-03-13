@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using TMPro;
 using System;
+using UnityEngine.UI;
 
 public class Buyer : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class Buyer : MonoBehaviour
     [SerializeField] private Transform _startPoint;
     [SerializeField] private TextMeshProUGUI _message;
     [SerializeField] private CanvasGroup _messagePanel;
-    [SerializeField] private SpriteRenderer _spriteRenderer;
+    [SerializeField] private Sprite _spriteRenderer;
     [SerializeField] private Level _level;
     [SerializeField] private Player _player;
     [SerializeField] private ResponseTimer _timer;
@@ -44,6 +45,8 @@ public class Buyer : MonoBehaviour
     {
         StartAssembly();
         _countAnswers = 0;
+        //_spriteRenderer = gameObject.GetComponent<Image>().sprite;
+        _spriteRenderer = gameObject.GetComponent<SpriteRenderer>().sprite;
     }
 
     private void Update()
@@ -143,7 +146,7 @@ public class Buyer : MonoBehaviour
         while (newCharacter == _lastCharacter);
 
         _lastCharacter = newCharacter;
-        _spriteRenderer.sprite = _level.Settings.Characters[newCharacter].Sprite;
+        _spriteRenderer = _level.Settings.Characters[newCharacter].Sprite;
     }
 
     private IEnumerator GoingToStart()

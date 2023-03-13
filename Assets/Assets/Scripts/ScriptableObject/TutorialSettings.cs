@@ -27,15 +27,21 @@ public class StepInTutorial
     [SerializeField] private string _message;
     [SerializeField] private Sprite _spriteCharacter;
     [SerializeField] private Sprite _spriteDialog;
+    [SerializeField] private Sprite _spriteDesk;
+    [SerializeField] private Boolean _GoDesk;
 
     public string Message => _message;
     public Sprite SpriteCharacter => _spriteCharacter;
     public Sprite SpriteDialog => _spriteDialog;
+    public Sprite SpriteDesk => _spriteDesk;
+    public Boolean GoDesk => _GoDesk;
 
-    public StepInTutorial(string message, Sprite spriteCharacter, Sprite spriteDialog)
+    public StepInTutorial(string message, Sprite spriteCharacter, Sprite spriteDialog, Sprite spriteDesk, Boolean GoDesk)
     {
         _message = message;
         _spriteCharacter = spriteCharacter;
         _spriteDialog = spriteDialog;
+        _spriteDesk = spriteDesk;
+        _GoDesk = GoDesk;
     }
 }
