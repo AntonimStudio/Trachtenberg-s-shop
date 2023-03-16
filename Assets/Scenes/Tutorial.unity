@@ -694,9 +694,9 @@ MonoBehaviour:
   _imageDesk: {fileID: 376385211}
   _startDeskPoint: {fileID: 1474554150}
   _endDeskPoint: {fileID: 98719884}
-  _timeTypeSymbolDefault: 0.1
-  _timeTypeSymbolSpeedUp: 0.001
-  _speedDesk: 198.07
+  _timeTypeSymbolDefault: 0.02
+  _timeTypeSymbolSpeedUp: 0.005
+  _speedOfDesk: 2.5
 --- !u!4 &542338855
 Transform:
   m_ObjectHideFlags: 0
