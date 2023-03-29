@@ -66,8 +66,8 @@ public class ButtonsTable : MonoBehaviour
                 break;
             case TypeButton.Cancel:
                 _result = _result.Remove(0,1);
-                if (_inputImage.transform.position.x < _inputPointPosition.transform.position.x -32) 
-                    _inputImage.transform.position = new Vector3(_inputImage.transform.position.x + 32, 
+                if (_inputImage.transform.position.x < _inputPointPosition.transform.position.x - 302) 
+                    _inputImage.transform.position = new Vector3(_inputImage.transform.position.x + 302, 
                         _inputImage.transform.position.y, _inputImage.transform.position.z);
                 break;
             default:
@@ -77,7 +77,7 @@ public class ButtonsTable : MonoBehaviour
         _answerText.text = _result;
         if (_result.Length < 15 && prevstroka.Length < _result.Length && _result.Length > 10)
             {
-                _inputImage.transform.position = new Vector3(_inputImage.transform.position.x - 32, _inputImage.transform.position.y, _inputImage.transform.position.z);
+                _inputImage.transform.position = new Vector3(_inputImage.transform.position.x - 302, _inputImage.transform.position.y, _inputImage.transform.position.z);
             }
         prevstroka = _result;
 

@@ -16,6 +16,7 @@ public class TutorialController : MonoBehaviour
     [SerializeField] private float _timeTypeSymbolDefault;
     [SerializeField] private float _timeTypeSymbolSpeedUp;
     [SerializeField] private float _speedOfDesk;
+    private float _epsilone = 4;
     private float _timeTypeSymbolCurrent;
     private int _unlockedLevels;
     private int _index;
@@ -44,7 +45,18 @@ public class TutorialController : MonoBehaviour
         }
         if (_isGoLeft) _imageDesk.transform.position = Vector3.Lerp(_imageDesk.transform.position, _endDeskPoint.position, Time.deltaTime * _speedOfDesk);
         if (_isGoRight) _imageDesk.transform.position = Vector3.Lerp(_imageDesk.transform.position, _startDeskPoint.position, Time.deltaTime * _speedOfDesk);
+        if (System.Math.Abs(_startDeskPoint.position.x - _imageDesk.transform.position.x) < _epsilone) 
+        { 
+            _imageDesk.transform.position = _startDeskPoint.position;
+            _isGoRight = false;
+        }
+        if (System.Math.Abs(_endDeskPoint.position.x - _imageDesk.transform.position.x) < _epsilone) 
+        { 
+            _imageDesk.transform.position = _endDeskPoint.position;
+            _isGoLeft = false;
+        }
     }
+
 
     private void SetMessage(int newIndex)
     {
