@@ -12,6 +12,7 @@ public class ButtonSmoothMovement : MonoBehaviour
     [SerializeField] private float _speed;
     [SerializeField] private GameObject _wall;
     [SerializeField] private ButtonSmoothMovement BSM;
+    [SerializeField] private float _epsilion;
     private bool _isRightClicked;
     private bool _isLeftClicked;
     private int _numberMenu;
@@ -32,7 +33,8 @@ public class ButtonSmoothMovement : MonoBehaviour
             _wall.SetActive(true);
             _screens[_numberMenu].transform.position = Vector3.MoveTowards(_screens[_numberMenu].transform.position, _points[0].position, Time.deltaTime * _speed);
             _screens[_numberMenu + 1].transform.position = Vector3.MoveTowards(_screens[_numberMenu + 1].transform.position, _points[1].position, Time.deltaTime * _speed);
-            if (_screens[_numberMenu].transform.position == _points[0].position)
+            Debug.Log($"{_screens[_numberMenu].transform.position} == {_points[0].position}");
+            if (Mathf.Abs(_screens[_numberMenu].transform.position.x - _points[0].position.x) <= _epsilion)
             {
                 _numberMenu += 1;
                 BSM.ChangeNumberMenu(_numberMenu);
@@ -49,7 +51,7 @@ public class ButtonSmoothMovement : MonoBehaviour
             _wall.SetActive(true);
             _screens[_numberMenu].transform.position = Vector3.MoveTowards(_screens[_numberMenu].transform.position, _points[2].position, Time.deltaTime * _speed);
             _screens[_numberMenu - 1].transform.position = Vector3.MoveTowards(_screens[_numberMenu - 1].transform.position, _points[1].position, Time.deltaTime * _speed);
-            if (_screens[_numberMenu].transform.position == _points[2].position)
+            if (Mathf.Abs(_screens[_numberMenu].transform.position.x - _points[2].position.x) <= _epsilion)
             {
                 _numberMenu -= 1;
                 BSM.ChangeNumberMenu(_numberMenu);

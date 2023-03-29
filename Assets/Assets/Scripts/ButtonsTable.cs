@@ -12,11 +12,13 @@ public class ButtonsTable : MonoBehaviour
     [SerializeField] private ResponseTimer _timer;
     [SerializeField] private Transform _inputImage;
     [SerializeField] private Transform _inputPointPosition;
-
-    private string prevstroka;
+    [SerializeField] private float _shiftAfterOverfillAnswer;
+    [SerializeField] private float _countSymbolsOverfillAnswer;
+    [SerializeField, Range(1, 100)] private int _maxLengthAnswer;
 
     private ButtonsTableState _state;
     private string _result;
+    private Vector3 _inputImageDefaultPosition;
     
 
     public event Action AllowedClick;
@@ -37,10 +39,9 @@ public class ButtonsTable : MonoBehaviour
     private void Start()
     {
 
+        _inputImageDefaultPosition = _inputImage.position;
         OffTable();
         BannedClick?.Invoke();
-        prevstroka = "";
-        
     }
 
     private void Update()
@@ -66,29 +67,24 @@ public class ButtonsTable : MonoBehaviour
                 break;
             case TypeButton.Cancel:
                 _result = _result.Remove(0,1);
-                if (_inputImage.transform.position.x < _inputPointPosition.transform.position.x - 302) 
-                    _inputImage.transform.position = new Vector3(_inputImage.transform.position.x + 302, 
-                        _inputImage.transform.position.y, _inputImage.transform.position.z);
                 break;
             default:
-                if (_result.Length < 14) _result = ((int)type).ToString() + _result;  /////????
+                if(_result.Length < _maxLengthAnswer)
+                    _result = ((int)type).ToString() + _result;
                 break;
         }
         _answerText.text = _result;
-        if (_result.Length < 15 && prevstroka.Length < _result.Length && _result.Length > 10)
+        if (_result.Length >= _countSymbolsOverfillAnswer)
             {
-                _inputImage.transform.position = new Vector3(_inputImage.transform.position.x - 302, _inputImage.transform.position.y, _inputImage.transform.position.z);
+                _inputImage.transform.position = _inputImageDefaultPosition - new Vector3(_shiftAfterOverfillAnswer * Screen.width * (_result.Length- _countSymbolsOverfillAnswer), 0, 0);
             }
-        prevstroka = _result;
-
-
     }
 
     private void OffTable()
     {
         _group.interactable = false;
         _result = "";
-        _inputImage.transform.position = new Vector3(_inputPointPosition.transform.position.x, _inputPointPosition.transform.position.y, _inputPointPosition.transform.position.z);
+        _inputImage.transform.position = _inputImageDefaultPosition;
         _answerText.text = _result.ToString();
     }
 
