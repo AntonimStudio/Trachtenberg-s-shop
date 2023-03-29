@@ -29,5 +29,5 @@ MonoBehaviour:
   - "\u041F\u0440\u0430\u0432\u0438\u043B\u044C\u043D\u043E"
   _badResultMessages:
   - "\u0424\u0438\u0433\u043D\u044F \u043A\u0430\u043A\u0430\u044F-\u0442\u043E"
-  _items: {fileID: 11400000, guid: 7fceb6a7be2851a4ea891396783e14c8, type: 2}
+  _items: {fileID: 11400000, guid: 168482a071d0a3444a1afd6547688eaa, type: 2}
   _valutes: {fileID: 11400000, guid: 0eb79650ec02583468e6c112656b193a, type: 2}

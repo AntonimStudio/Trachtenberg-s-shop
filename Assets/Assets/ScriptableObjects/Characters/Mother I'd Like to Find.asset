@@ -13,9 +13,15 @@ MonoBehaviour:
   m_Name: Mother I'd Like to Find
   m_EditorClassIdentifier: 
   _sprite: {fileID: 21300000, guid: c0df4558167584a4980fe6441f84cb14, type: 3}
-  _startMessages: []
-  _questionMessages: []
-  _goodResultMessages: []
-  _badResultMessages: []
-  _items: {fileID: 0}
-  _valutes: {fileID: 0}
+  _startMessages:
+  - "\u042F \u0435\u0449\u0451 \u043D\u0435 \u0441\u0434\u0435\u043B\u0430\u043D\u0430,
+    \u043F\u0440\u043E\u0441\u0442\u0438"
+  _questionMessages:
+  - "\u041C\u043E\u0436\u0435\u0448\u044C \u0434\u0430\u0442\u044C \u043C\u043D\u0435
+    x i \u043F\u043E y v?"
+  _goodResultMessages:
+  - "\u041F\u0440\u0430\u0432\u0438\u043B\u044C\u043D\u043E"
+  _badResultMessages:
+  - "\u041B\u043E\u0445"
+  _items: {fileID: 11400000, guid: 7fceb6a7be2851a4ea891396783e14c8, type: 2}
+  _valutes: {fileID: 11400000, guid: 0eb79650ec02583468e6c112656b193a, type: 2}
