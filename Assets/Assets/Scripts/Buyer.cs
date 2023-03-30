@@ -20,6 +20,7 @@ public class Buyer : MonoBehaviour
     [Header("Настройки анимации")]
     [SerializeField] private AnimationCurve _curve;
     [SerializeField] private float _defaultY;
+    [SerializeField] private ParticleSystem _piggyCoins;
 
     private int _lastCharacter = -1;
     private int _countAnswers;
@@ -102,6 +103,7 @@ public class Buyer : MonoBehaviour
         {
             _message.text = _level.Settings.Characters[_lastCharacter].GetRandomGoodResultMessage();
             _player.TakeTips(Mathf.RoundToInt(_timer.Value * 100));
+            _piggyCoins.Play();
         }
         else
         {
