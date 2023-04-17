@@ -12,15 +12,239 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41338c7e7b26863499b9d3ee2f6be11f, type: 3}
   m_Name: Tutorial 3
   m_EditorClassIdentifier: 
-  _number: 2
+  _number: 0
   _messages:
-  - _message: "\u0417\u0434\u0435\u0441\u044C \u0435\u0449\u0451 \u043D\u0438\u0447\u0435\u0433\u043E
+  - _message: "\u041E\u043F\u044F\u0442\u044C \u0442\u044B? \u041D\u0443 \u0447\u0442\u043E
+      \u0436, \u043F\u0440\u043E\u0445\u043E\u0434\u0438."
+    _spriteCharacter: {fileID: 21300000, guid: 7a031911158da1e40a86409b48d1e224, type: 3}
+    _spriteDialog: {fileID: 21300000, guid: 06f7ca3d041028c4e9973030fa715ec6, type: 3}
+    _spriteDesk: {fileID: 0}
+    _GoDesk: 0
+  - _message: "\u0421\u0435\u0433\u043E\u0434\u043D\u044F \u043C\u044B \u0431\u0443\u0434\u0435\u043C
+      \u0440\u0430\u0437\u0431\u0438\u0440\u0430\u0442\u044C \u0443\u043C\u043D\u043E\u0436\u0435\u043D\u0438\u0435
+      \u043D\u0430 6. \u041F\u043E\u043A\u0430 \u0447\u0442\u043E, \u043F\u0440\u0430\u0432\u0438\u043B\u0430
+      \u0432\u0441\u0435 \u043F\u043E\u0445\u043E\u0436\u0438, \u043D\u0435 \u0437\u0430\u043F\u0443\u0442\u0430\u0435\u0448\u044C\u0441\u044F"
+    _spriteCharacter: {fileID: 21300000, guid: 256b615bfe83aa3479e6c693bbe2cd95, type: 3}
+    _spriteDialog: {fileID: 21300000, guid: aec66382d51b84646b94b487701c3cbc, type: 3}
+    _spriteDesk: {fileID: 0}
+    _GoDesk: 0
+  - _message: "\u041A\u0430\u043A \u0432\u0441\u0435\u0433\u0434\u0430, \u043D\u0430\u043F\u043E\u043C\u043D\u044E:
+      \u0432\u044B\u0447\u0438\u0441\u043B\u0435\u043D\u0438\u044F \u043F\u0440\u043E\u0445\u043E\u0434\u044F\u0442
+      \u0441\u043F\u0440\u0430\u0432\u0430 \u043D\u0430\u043B\u0435\u0432\u043E,
+      \u0442\u0430\u043A \u0447\u0442\u043E \u043F\u043E\u0441\u043B\u0435\u0434\u043D\u044F\u044F
+      \u0446\u0438\u0444\u0440\u0430, \u043A\u043E\u0442\u043E\u0440\u0443\u044E
+      \u043C\u044B \u0437\u0430\u043F\u0438\u0448\u0435\u043C \u0432 \u043E\u0442\u0432\u0435\u0442,
+      \u0431\u0443\u0434\u0435\u0442 \u0434\u043B\u044F \u0447\u0438\u0441\u043B\u0430
+      \u043F\u0435\u0440\u0432\u043E\u0439"
+    _spriteCharacter: {fileID: 21300000, guid: 256b615bfe83aa3479e6c693bbe2cd95, type: 3}
+    _spriteDialog: {fileID: 21300000, guid: 9f3c04f174117bb4e9a76bcd8ca06938, type: 3}
+    _spriteDesk: {fileID: 0}
+    _GoDesk: 0
+  - _message: "\u0421\u0435\u0433\u043E\u0434\u043D\u044F \u0443 \u043D\u0430\u0441
+      \u0443\u043C\u043D\u043E\u0436\u0435\u043D\u0438\u0435 \u043D\u0430 6. \u0422\u0443\u0442
+      \u0432\u0441\u0435 \u0442\u0430\u043A \u0436\u0435, \u043A\u0430\u043A \u0438
+      \u0441 \u0443\u043C\u043D\u043E\u0436\u0435\u043D\u0438\u0435\u043C \u043D\u0430
+      12, \u0442\u043E\u043B\u044C\u043A\u043E \u0432\u043C\u0435\u0441\u0442\u043E
+      \u0442\u043E\u0433\u043E, \u0447\u0442\u043E\u0431\u044B \u043F\u043E \u043E\u0447\u0435\u0440\u0435\u0434\u0438
+      \u0443\u0434\u0432\u0430\u0438\u0432\u0430\u0442\u044C \u0446\u0438\u0444\u0440\u044B
+      \u0438 \u0441\u043A\u043B\u0430\u0434\u044B\u0432\u0430\u0442\u044C \u0441
+      \u0432\u043F\u0435\u0440\u0435\u0434\u0438 \u0441\u0442\u043E\u044F\u0449\u0438\u043C\u0438,
+      \u043C\u044B \u0434\u0435\u043B\u0438\u043C \u0438\u0445 \u043F\u043E\u043F\u043E\u043B\u0430\u043C"
+    _spriteCharacter: {fileID: 21300000, guid: 7a031911158da1e40a86409b48d1e224, type: 3}
+    _spriteDialog: {fileID: 21300000, guid: 9e528365d2ad7c14bab4c79c258ecb70, type: 3}
+    _spriteDesk: {fileID: 21300000, guid: 1894ef69af8462c4a9c03c2d461eaa5b, type: 3}
+    _GoDesk: 1
+  - _message: "\u041F\u0435\u0440\u0435\u0444\u0440\u0430\u0437\u0438\u0440\u0443\u044E.
+      \u0414\u043B\u044F \u0442\u043E\u0433\u043E, \u0447\u0442\u043E\u0431\u044B
+      \u0443\u043C\u043D\u043E\u0436\u0438\u0442\u044C \u043D\u0430 6, \u0442\u044B
+      \u0434\u043E\u043B\u0436\u0435\u043D \u043F\u043E\u043E\u0447\u0435\u0440\u0435\u0434\u043D\u043E
+      \u043F\u0440\u0438\u0431\u0430\u0432\u043B\u044F\u0442\u044C \u043F\u043E\u043B\u043E\u0432\u0438\u043D\u0443
+      \u0446\u0438\u0444\u0440\u044B \u043A \u0435\u0435 \u0432\u043F\u0435\u0440\u0435\u0434\u0438
+      \u0441\u0442\u043E\u044F\u0449\u0435\u043C\u0443 \u0441\u043E\u0441\u0435\u0434\u0443."
+    _spriteCharacter: {fileID: 21300000, guid: 7a031911158da1e40a86409b48d1e224, type: 3}
+    _spriteDialog: {fileID: 21300000, guid: 9f3c04f174117bb4e9a76bcd8ca06938, type: 3}
+    _spriteDesk: {fileID: 21300000, guid: 1894ef69af8462c4a9c03c2d461eaa5b, type: 3}
+    _GoDesk: 0
+  - _message: "\u0414\u0430\u0432\u0430\u0439 \u044F \u0442\u0435\u0431\u0435 \u043B\u0443\u0447\u0448\u0435
+      \u043F\u043E\u043A\u0430\u0436\u0443."
+    _spriteCharacter: {fileID: 21300000, guid: 256b615bfe83aa3479e6c693bbe2cd95, type: 3}
+    _spriteDialog: {fileID: 21300000, guid: 06f7ca3d041028c4e9973030fa715ec6, type: 3}
+    _spriteDesk: {fileID: 21300000, guid: 8e7344b6f92ddd745b6801ec19270400, type: 3}
+    _GoDesk: 0
+  - _message: "\u041F\u043E\u0441\u043B\u0435\u0434\u043D\u0435\u0439 \u0446\u0438\u0444\u0440\u043E\u0439
+      \u0447\u0438\u0441\u043B\u0430 \u0431\u0443\u0434\u0435\u0442 4. \u041B\u0435\u0432\u0435\u0435
+      \u0446\u0438\u0444\u0440\u044B \u0434\u043B\u044F \u0434\u0435\u043B\u0435\u043D\u0438\u044F
       \u043D\u0435\u0442"
-    _spriteCharacter: {fileID: 0}
-    _spriteDialog: {fileID: 0}
-  - _message: "\u041F\u0430\u0440\u0430\u043C \u043F\u0430\u043C \u043F\u0430\u043C"
-    _spriteCharacter: {fileID: 0}
-    _spriteDialog: {fileID: 0}
-  - _message: "\u0418\u0434\u0438 \u043E\u0442\u0441\u044E\u0434\u0430"
-    _spriteCharacter: {fileID: 0}
-    _spriteDialog: {fileID: 0}
+    _spriteCharacter: {fileID: 21300000, guid: 7a031911158da1e40a86409b48d1e224, type: 3}
+    _spriteDialog: {fileID: 21300000, guid: 06f7ca3d041028c4e9973030fa715ec6, type: 3}
+    _spriteDesk: {fileID: 21300000, guid: a87463b1d0dcddf4fb577e8520f7c7b3, type: 3}
+    _GoDesk: 0
+  - _message: "\u0418\u0434\u0435\u043C \u0434\u0430\u043B\u044C\u0448\u0435. 4 :
+      2 = 2, 2 + 8 = 10. \u0412\u0441\u0435 \u0435\u0449\u0435 \u043F\u043E\u043C\u043D\u0438\u0448\u044C
+      \u0438\u0441\u0442\u043E\u0440\u0438\u044E \u043F\u0440\u043E\u0448\u043B\u043E\u0433\u043E
+      \u0441\u0442\u0430\u0436\u0435\u0440\u0430?"
+    _spriteCharacter: {fileID: 21300000, guid: 7a031911158da1e40a86409b48d1e224, type: 3}
+    _spriteDialog: {fileID: 21300000, guid: aec66382d51b84646b94b487701c3cbc, type: 3}
+    _spriteDesk: {fileID: 21300000, guid: f5e3e0653c0f6b046be1a8b22b1fb480, type: 3}
+    _GoDesk: 0
+  - _message: "0 \u0438\u0434\u0435\u0442 \u0432 \u043E\u0442\u0432\u0435\u0442,
+      \u0435\u0434\u0438\u043D\u0438\u0446\u0443 \u0437\u0430\u043F\u043E\u043C\u0438\u043D\u0430\u0435\u043C"
+    _spriteCharacter: {fileID: 21300000, guid: 7a031911158da1e40a86409b48d1e224, type: 3}
+    _spriteDialog: {fileID: 21300000, guid: 06f7ca3d041028c4e9973030fa715ec6, type: 3}
+    _spriteDesk: {fileID: 21300000, guid: f5e3e0653c0f6b046be1a8b22b1fb480, type: 3}
+    _GoDesk: 0
+  - _message: "\u0414\u0430\u043B\u0435\u0435, 8 : 2 = 4, 4 + 1 + 0 = 5. \u0417\u0430\u043F\u0438\u0441\u044B\u0432\u0430\u0435\u043C
+      \u0432 \u043E\u0442\u0432\u0435\u0442"
+    _spriteCharacter: {fileID: 21300000, guid: 256b615bfe83aa3479e6c693bbe2cd95, type: 3}
+    _spriteDialog: {fileID: 21300000, guid: 06f7ca3d041028c4e9973030fa715ec6, type: 3}
+    _spriteDesk: {fileID: 21300000, guid: 79942ddb2267c7548a21d7694fba1f5b, type: 3}
+    _GoDesk: 0
+  - _message: "0 + 2 = 2, \u0434\u0432\u043E\u0439\u043A\u0430 \u0438\u0434\u0435\u0442
+      \u0432 \u043E\u0442\u0432\u0435\u0442 \u0438\u043B\u0438...\u0441\u0442\u0430\u0436\u0435\u0440,
+      \u0442\u044B \u0432\u0441\u0435 \u0435\u0449\u0435 \u0448\u043A\u043E\u043B\u044C\u043D\u0438\u043A?"
+    _spriteCharacter: {fileID: 21300000, guid: 256b615bfe83aa3479e6c693bbe2cd95, type: 3}
+    _spriteDialog: {fileID: 21300000, guid: 06f7ca3d041028c4e9973030fa715ec6, type: 3}
+    _spriteDesk: {fileID: 21300000, guid: dbbc3edcb4fcd6a4c882d8237bc5c734, type: 3}
+    _GoDesk: 0
+  - _message: "2 : 2 = 1, 1 + 2 = 3. \u042F \u0434\u0443\u043C\u0430\u044E, \u0447\u0442\u043E
+      \u0442\u044B \u0441\u043E\u043E\u0431\u0440\u0430\u0437\u0438\u043B."
+    _spriteCharacter: {fileID: 21300000, guid: 7a031911158da1e40a86409b48d1e224, type: 3}
+    _spriteDialog: {fileID: 21300000, guid: 06f7ca3d041028c4e9973030fa715ec6, type: 3}
+    _spriteDesk: {fileID: 21300000, guid: 5498084c37cc46d4a8d1643c1f6f95a9, type: 3}
+    _GoDesk: 0
+  - _message: "2: 2 = 1, \u0435\u0434\u0438\u043D\u0438\u0446\u0430 \u0438 \u0448\u0435\u0441\u0442\u044C
+      \u0431\u0443\u0434\u0435\u0442 \u0441\u0435\u043C\u044C. \u041F\u043E\u0447\u0442\u0438
+      \u0437\u0430\u043A\u043E\u043D\u0447\u0438\u043B\u0438."
+    _spriteCharacter: {fileID: 21300000, guid: 256b615bfe83aa3479e6c693bbe2cd95, type: 3}
+    _spriteDialog: {fileID: 21300000, guid: 06f7ca3d041028c4e9973030fa715ec6, type: 3}
+    _spriteDesk: {fileID: 21300000, guid: b2fee0ff2ea620244861a49807b5aec7, type: 3}
+    _GoDesk: 0
+  - _message: "6: 2 = 3. \u0412\u043E\u0442 \u043C\u044B \u0438 \u043D\u0430\u0448\u043B\u0438
+      \u043F\u0435\u0440\u0432\u0443\u044E \u0446\u0438\u0444\u0440\u0443 \u0447\u0438\u0441\u043B\u0430."
+    _spriteCharacter: {fileID: 21300000, guid: 7a031911158da1e40a86409b48d1e224, type: 3}
+    _spriteDialog: {fileID: 21300000, guid: 06f7ca3d041028c4e9973030fa715ec6, type: 3}
+    _spriteDesk: {fileID: 21300000, guid: 5b95c2081a3f05e459da00caa94906d3, type: 3}
+    _GoDesk: 0
+  - _message: "\u0410 \u0442\u0435\u043F\u0435\u0440\u044C, \u0441\u0442\u0430\u0436\u0435\u0440,
+      \u0442\u0435\u0441\u0442 \u043D\u0430 \u0432\u043D\u0438\u043C\u0430\u0442\u0435\u043B\u044C\u043D\u043E\u0441\u0442\u044C.
+      \u0427\u0435\u0433\u043E \u043D\u0435 \u0431\u044B\u043B\u043E \u0432 \u044D\u0442\u043E\u043C
+      \u043F\u0440\u0438\u043C\u0435\u0440\u0435?"
+    _spriteCharacter: {fileID: 21300000, guid: 256b615bfe83aa3479e6c693bbe2cd95, type: 3}
+    _spriteDialog: {fileID: 21300000, guid: aec66382d51b84646b94b487701c3cbc, type: 3}
+    _spriteDesk: {fileID: 21300000, guid: 5b95c2081a3f05e459da00caa94906d3, type: 3}
+    _GoDesk: 0
+  - _message: "\u041B\u0430\u0434\u043D\u043E, \u0443 \u0448\u043A\u043E\u043B\u044C\u043D\u0438\u043A\u043E\u0432
+      \u0432\u0441\u0435 \u0440\u0430\u0432\u043D\u043E \u043D\u0435\u0442 \u043F\u0440\u0430\u0432\u0430
+      \u0433\u043E\u043B\u043E\u0441\u0430, \u0442\u0430\u043A \u0443\u0436 \u0438
+      \u0431\u044B\u0442\u044C, \u043F\u043E\u0434\u0441\u043E\u0431\u043B\u044E
+      \u0442\u0435\u0431\u0435. \u0412 \u0443\u043C\u043D\u043E\u0436\u0430\u0435\u043C\u043E\u043C
+      \u0447\u0438\u0441\u043B\u0435 \u043D\u0435\u0442 \u043D\u0435\u0447\u0435\u0442\u043D\u044B\u0445
+      \u0446\u0438\u0444\u0440. \u041D\u043E \u0447\u0442\u043E \u0436\u0435 \u0434\u0435\u043B\u0430\u0442\u044C
+      \u0432 \u0442\u0430\u043A\u043E\u043C \u0441\u043B\u0443\u0447\u0430\u0435?"
+    _spriteCharacter: {fileID: 21300000, guid: 7a031911158da1e40a86409b48d1e224, type: 3}
+    _spriteDialog: {fileID: 21300000, guid: 9f3c04f174117bb4e9a76bcd8ca06938, type: 3}
+    _spriteDesk: {fileID: 21300000, guid: 5b95c2081a3f05e459da00caa94906d3, type: 3}
+    _GoDesk: 1
+  - _message: "\u0412\u0441\u0435 \u043F\u0440\u043E\u0441\u0442\u043E. \u0415\u0441\u043B\u0438
+      \u0446\u0438\u0444\u0440\u0430 \u0432\u043F\u0435\u0440\u0435\u0434\u0438 \u043D\u0435\u0447\u0435\u0442\u043D\u0430\u044F,
+      \u0442\u043E \u043F\u043E\u043C\u0438\u043C\u043E \u043E\u0431\u044B\u0447\u043D\u044B\u0445
+      \u0432\u044B\u0447\u0438\u0441\u043B\u0435\u043D\u0438\u0439 \u043F\u0440\u0438\u0431\u0430\u0432\u044C
+      \u0435\u0449\u0435 5 \u0441\u0432\u0435\u0440\u0445\u0443."
+    _spriteCharacter: {fileID: 21300000, guid: 7a031911158da1e40a86409b48d1e224, type: 3}
+    _spriteDialog: {fileID: 21300000, guid: aec66382d51b84646b94b487701c3cbc, type: 3}
+    _spriteDesk: {fileID: 21300000, guid: b2fee0ff2ea620244861a49807b5aec7, type: 3}
+    _GoDesk: 0
+  - _message: "\u0425\u043E\u0440\u043E\u0448\u043E, \u0441 \u044D\u0442\u0438\u043C
+      \u0440\u0430\u0437\u043E\u0431\u0440\u0430\u043B\u0438\u0441\u044C. \u0410
+      \u0447\u0442\u043E \u043D\u0430\u0441\u0447\u0435\u0442 \u0442\u043E\u0433\u043E
+      \u0441\u043B\u0443\u0447\u0430\u044F, \u043A\u043E\u0433\u0434\u0430 \u043D\u0435\u0447\u0435\u0442\u043D\u0443\u044E
+      \u0446\u0438\u0444\u0440\u0443 \u043D\u0443\u0436\u043D\u043E \u0440\u0430\u0437\u0434\u0435\u043B\u0438\u0442\u044C?"
+    _spriteCharacter: {fileID: 21300000, guid: 256b615bfe83aa3479e6c693bbe2cd95, type: 3}
+    _spriteDialog: {fileID: 21300000, guid: 9f3c04f174117bb4e9a76bcd8ca06938, type: 3}
+    _spriteDesk: {fileID: 21300000, guid: b2fee0ff2ea620244861a49807b5aec7, type: 3}
+    _GoDesk: 0
+  - _message: "\u0412\u0441\u0435 \u043F\u0440\u043E\u0441\u0442\u043E. \u0422\u0435\u0431\u044F
+      \u0445\u043E\u0442\u044C \u0440\u0430\u0437 \u043E\u0442\u043F\u0440\u0430\u0432\u043B\u044F\u043B\u0438
+      \u0437\u0430 \u043F\u043E\u043A\u0443\u043F\u043A\u0430\u043C\u0438 \u0432
+      \u043C\u0435\u043B\u043A\u043E\u043C \u0432\u043E\u0437\u0440\u0430\u0441\u0442\u0435?
+      \u0422\u0430\u043A \u0432\u043E\u0442, \u0441\u0434\u0430\u0447\u0443 \u043E\u0441\u0442\u0430\u0432\u044C
+      \u0441\u0435\u0431\u0435. \u041F\u0440\u0438 \u0434\u0435\u043B\u0435\u043D\u0438\u0438
+      \u043D\u0430\u043C \u043D\u0443\u0436\u043D\u0430 \u0442\u043E\u043B\u044C\u043A\u043E
+      \u0446\u0435\u043B\u0430\u044F \u0447\u0430\u0441\u0442\u044C \u043E\u0442
+      \u043F\u043E\u043B\u0443\u0447\u0438\u0432\u0448\u0435\u0433\u043E\u0441\u044F
+      \u043E\u0442\u0432\u0435\u0442\u0430."
+    _spriteCharacter: {fileID: 21300000, guid: 7a031911158da1e40a86409b48d1e224, type: 3}
+    _spriteDialog: {fileID: 21300000, guid: 9e528365d2ad7c14bab4c79c258ecb70, type: 3}
+    _spriteDesk: {fileID: 21300000, guid: 1894ef69af8462c4a9c03c2d461eaa5b, type: 3}
+    _GoDesk: 1
+  - _message: "\u041F\u043E\u043F\u0440\u043E\u0431\u0443\u0435\u043C \u043D\u0430
+      \u043F\u0440\u0438\u043C\u0435\u0440\u0435."
+    _spriteCharacter: {fileID: 21300000, guid: 256b615bfe83aa3479e6c693bbe2cd95, type: 3}
+    _spriteDialog: {fileID: 21300000, guid: 06f7ca3d041028c4e9973030fa715ec6, type: 3}
+    _spriteDesk: {fileID: 21300000, guid: af7d6fbb1f7c8364086b0b427ea95cdf, type: 3}
+    _GoDesk: 0
+  - _message: "\u0414\u0432\u043E\u0439\u043A\u0443 \u0441\u0440\u0430\u0437\u0443
+      \u0432\u044B\u043D\u043E\u0441\u0438\u043C \u0432 \u043E\u0442\u0432\u0435\u0442.
+      \u041F\u043E\u0442\u043E\u043C, 2 : 2 = 1, 1 + 5 = 6\u2026\u2026\u041D\u041E.
+      \u0412\u043F\u0435\u0440\u0435\u0434\u0438 \u0441\u0442\u043E\u0438\u0442 \u043D\u0435\u0447\u0435\u0442\u043D\u0430\u044F
+      \u0446\u0438\u0444\u0440\u0430, \u0437\u043D\u0430\u0447\u0438\u0442 \u0434\u043E\u0431\u0430\u0432\u043B\u044F\u0435\u043C
+      \u0434\u043E\u043F\u043E\u043B\u043D\u0438\u0442\u0435\u043B\u044C\u043D\u0443\u044E
+      \u043F\u044F\u0442\u0435\u0440\u043A\u0443. 5 + 6 = 11."
+    _spriteCharacter: {fileID: 21300000, guid: 7a031911158da1e40a86409b48d1e224, type: 3}
+    _spriteDialog: {fileID: 21300000, guid: 9f3c04f174117bb4e9a76bcd8ca06938, type: 3}
+    _spriteDesk: {fileID: 21300000, guid: aec0e521026385640982551947cad395, type: 3}
+    _GoDesk: 0
+  - _message: "\u0414\u0432\u0435 \u0435\u0434\u0438\u043D\u0438\u0446\u044B: \u043E\u0434\u043D\u0443
+      \u0432 \u043E\u0442\u0432\u0435\u0442, \u043E\u0434\u043D\u0443 \u0437\u0430\u043F\u043E\u043C\u043D\u0438\u043C"
+    _spriteCharacter: {fileID: 21300000, guid: 256b615bfe83aa3479e6c693bbe2cd95, type: 3}
+    _spriteDialog: {fileID: 21300000, guid: 06f7ca3d041028c4e9973030fa715ec6, type: 3}
+    _spriteDesk: {fileID: 21300000, guid: d75f5df6c2677f648b43ebed3df266be, type: 3}
+    _GoDesk: 0
+  - _message: "5 : 2 = 2.5. 0.5 \u043C\u044B \u043D\u0435 \u0431\u0435\u0440\u0435\u043C,
+      \u043E\u0442 \u0434\u0435\u043B\u0435\u043D\u0438\u044F \u043D\u0430\u043C
+      \u043D\u0443\u0436\u043D\u0430 \u0442\u043E\u043B\u044C\u043A\u043E \u0434\u0432\u043E\u0439\u043A\u0430.
+      \u0414\u0432\u0430, \u043D\u043E\u043B\u044C \u0434\u0430 \u0435\u0449\u0435
+      \u0438 \u0437\u0430\u043F\u043E\u043C\u043D\u0435\u043D\u043D\u0430\u044F \u043D\u0430\u043C\u0438
+      \u0440\u0430\u043D\u0435\u0435 \u0435\u0434\u0438\u043D\u0438\u0446\u0430 \u2013
+      \u0431\u0443\u0434\u0435\u0442 \u0442\u0440\u0438. \u0417\u0430\u043F\u0438\u0448\u0435\u043C."
+    _spriteCharacter: {fileID: 21300000, guid: 7a031911158da1e40a86409b48d1e224, type: 3}
+    _spriteDialog: {fileID: 21300000, guid: 9f3c04f174117bb4e9a76bcd8ca06938, type: 3}
+    _spriteDesk: {fileID: 21300000, guid: b63362ca9593a4f4198c88a50f939b83, type: 3}
+    _GoDesk: 0
+  - _message: "3 \u2013 \u043D\u0435\u0447\u0435\u0442\u043D\u0430\u044F, \u0437\u043D\u0430\u0447\u0438\u0442
+      \u0434\u043E\u0431\u0430\u0432\u043B\u044F\u0435\u043C 5. 3 + 0 + 5 = 8. \u041F\u0438\u0448\u0435\u043C."
+    _spriteCharacter: {fileID: 21300000, guid: 7a031911158da1e40a86409b48d1e224, type: 3}
+    _spriteDialog: {fileID: 21300000, guid: 06f7ca3d041028c4e9973030fa715ec6, type: 3}
+    _spriteDesk: {fileID: 21300000, guid: 8033f412b59d9ab4fafd0b8abd1f6c4f, type: 3}
+    _GoDesk: 0
+  - _message: "3 : 2 = 1.5. 1 + 4 = 5. \u0417\u0430\u043D\u043E\u0441\u0438\u043C
+      \u0432 \u043E\u0442\u0432\u0435\u0442."
+    _spriteCharacter: {fileID: 21300000, guid: 256b615bfe83aa3479e6c693bbe2cd95, type: 3}
+    _spriteDialog: {fileID: 21300000, guid: 06f7ca3d041028c4e9973030fa715ec6, type: 3}
+    _spriteDesk: {fileID: 21300000, guid: 2847e452b671945478387e2cd5f89262, type: 3}
+    _GoDesk: 0
+  - _message: "4 : 2 = 2, 2 + 4 = 6. \u041E\u0441\u0442\u0430\u043B\u0430\u0441\u044C
+      \u043F\u043E\u0441\u043B\u0435\u0434\u043D\u044F\u044F."
+    _spriteCharacter: {fileID: 21300000, guid: 7a031911158da1e40a86409b48d1e224, type: 3}
+    _spriteDialog: {fileID: 21300000, guid: 06f7ca3d041028c4e9973030fa715ec6, type: 3}
+    _spriteDesk: {fileID: 21300000, guid: bdcd4687a98272d4eac2f7ae2ff33bc0, type: 3}
+    _GoDesk: 0
+  - _message: "4 : 2 = 2, 2 + 0 = 2. \u041F\u0435\u0440\u0432\u0430\u044F \u0446\u0438\u0444\u0440\u0430
+      \u043D\u0430\u0439\u0434\u0435\u043D\u0430, \u0430 \u043C\u043E\u044F \u0440\u0430\u0431\u043E\u0442\u0430
+      \u0437\u0430\u043A\u043E\u043D\u0447\u0435\u043D\u0430."
+    _spriteCharacter: {fileID: 21300000, guid: 256b615bfe83aa3479e6c693bbe2cd95, type: 3}
+    _spriteDialog: {fileID: 21300000, guid: 06f7ca3d041028c4e9973030fa715ec6, type: 3}
+    _spriteDesk: {fileID: 21300000, guid: 5c6f283048d0f5e4b97c9e861dab20e5, type: 3}
+    _GoDesk: 0
+  - _message: "\u0422\u0435\u043F\u0435\u0440\u044C \u0442\u0432\u043E\u044F \u043E\u0447\u0435\u0440\u0435\u0434\u044C,
+      \u0441\u0442\u0430\u0436\u0435\u0440! \u041F\u043E\u0441\u0442\u043E\u0439
+      \u0437\u0430 \u043F\u0440\u0438\u043B\u0430\u0432\u043A\u043E\u043C, \u043F\u043E\u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0443\u0439\u0441\u044F."
+    _spriteCharacter: {fileID: 21300000, guid: 256b615bfe83aa3479e6c693bbe2cd95, type: 3}
+    _spriteDialog: {fileID: 21300000, guid: aec66382d51b84646b94b487701c3cbc, type: 3}
+    _spriteDesk: {fileID: 21300000, guid: 5c6f283048d0f5e4b97c9e861dab20e5, type: 3}
+    _GoDesk: 0
+  - _message: "\u0423\u0434\u0430\u0447\u0438"
+    _spriteCharacter: {fileID: 21300000, guid: 7a031911158da1e40a86409b48d1e224, type: 3}
+    _spriteDialog: {fileID: 21300000, guid: 06f7ca3d041028c4e9973030fa715ec6, type: 3}
+    _spriteDesk: {fileID: 21300000, guid: 5c6f283048d0f5e4b97c9e861dab20e5, type: 3}
+    _GoDesk: 1

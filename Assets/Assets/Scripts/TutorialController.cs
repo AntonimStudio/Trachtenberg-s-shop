@@ -66,13 +66,14 @@ public class TutorialController : MonoBehaviour
             StartCoroutine(TypingText(ButtonOnMenuToTutorial.CurrentTutorial[_index].Message));
             _imageMadam.GetComponent<Image>().sprite = ButtonOnMenuToTutorial.CurrentTutorial[_index].SpriteCharacter;
             _imageDialog.GetComponent<Image>().sprite = ButtonOnMenuToTutorial.CurrentTutorial[_index].SpriteDialog;
+            _imageDesk.GetComponent<Image>().sprite = ButtonOnMenuToTutorial.CurrentTutorial[_index].SpriteDesk;
             if (_imageDesk.transform.position == _startDeskPoint.position && ButtonOnMenuToTutorial.CurrentTutorial[_index].GoDesk) _isGoLeft = true;
             if (_imageDesk.transform.position == _endDeskPoint.position && ButtonOnMenuToTutorial.CurrentTutorial[_index].GoDesk) _isGoRight = true;
         }
         else
         {
             _unlockedLevels = PlayerPrefs.GetInt("UnlockedLevels") + 1;
-            PlayerPrefs.SetInt("UnlockedLevels", _unlockedLevels);                                                 ////////////!!!!!!!!!!!
+            PlayerPrefs.SetInt("UnlockedLevels", _unlockedLevels);
             SceneManager.LoadScene(2);
         }
     }
