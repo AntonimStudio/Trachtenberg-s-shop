@@ -695,7 +695,7 @@ MonoBehaviour:
   _startDeskPoint: {fileID: 1474554150}
   _endDeskPoint: {fileID: 98719884}
   _timeTypeSymbolDefault: 0.02
-  _timeTypeSymbolSpeedUp: 0.005
+  _timeTypeSymbolSpeedUp: 0.00005
   _speedOfDesk: 2.5
 --- !u!4 &542338855
 Transform:
@@ -1097,6 +1097,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 231e4ecd18a91c04fad915ab8021508e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _level: {fileID: 0}
 --- !u!1 &1474554149
 GameObject:
   m_ObjectHideFlags: 0

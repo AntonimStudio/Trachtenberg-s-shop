@@ -10,9 +10,9 @@ public class ButtonToMenu : MonoBehaviour
     {
         _unlockedTutorials = PlayerPrefs.GetInt("UnlockedTutorials");
 
-        if (_unlockedTutorials <= _level.Settings.Number)
+        if (_unlockedTutorials <= _level.Settings.Number + 1)
         {
-            PlayerPrefs.SetInt("UnlockedTutorials", _level.Settings.Number);
+            PlayerPrefs.SetInt("UnlockedTutorials", _level.Settings.Number + 1);
         }
         SceneManager.LoadScene(2);
     }

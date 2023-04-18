@@ -33,7 +33,7 @@ public class ButtonSmoothMovement : MonoBehaviour
             _wall.SetActive(true);
             _screens[_numberMenu].transform.position = Vector3.MoveTowards(_screens[_numberMenu].transform.position, _points[0].position, Time.deltaTime * _speed);
             _screens[_numberMenu + 1].transform.position = Vector3.MoveTowards(_screens[_numberMenu + 1].transform.position, _points[1].position, Time.deltaTime * _speed);
-            Debug.Log($"{_screens[_numberMenu].transform.position} == {_points[0].position}");
+            
             if (Mathf.Abs(_screens[_numberMenu].transform.position.x - _points[0].position.x) <= _epsilion)
             {
                 _numberMenu += 1;
@@ -55,7 +55,7 @@ public class ButtonSmoothMovement : MonoBehaviour
             {
                 _numberMenu -= 1;
                 BSM.ChangeNumberMenu(_numberMenu);
-                Debug.Log(_numberMenu);
+               
                 _isLeftClicked = false;
                 _isRightClicked = false;
                 _wall.SetActive(false);

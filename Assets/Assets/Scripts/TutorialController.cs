@@ -37,11 +37,11 @@ public class TutorialController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0))///////////////////11111111111111111111111111111111111111111
         {
             if (_isWriting) _timeTypeSymbolCurrent = _timeTypeSymbolSpeedUp;
             else SetMessage(_index + 1);
-
+            //_imageMadam.SetActive(false);
         }
         if (_isGoLeft) _imageDesk.transform.position = Vector3.Lerp(_imageDesk.transform.position, _endDeskPoint.position, Time.deltaTime * _speedOfDesk);
         if (_isGoRight) _imageDesk.transform.position = Vector3.Lerp(_imageDesk.transform.position, _startDeskPoint.position, Time.deltaTime * _speedOfDesk);
