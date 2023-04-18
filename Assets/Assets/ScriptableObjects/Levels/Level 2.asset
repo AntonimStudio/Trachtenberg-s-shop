@@ -30,3 +30,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 75608a5db6a19d143858beee844a49ad, type: 2}
   _backgroung: {fileID: 21300000, guid: 5e323befe9be79140b9b67820aeb23e3, type: 3}
   _countQuestions: 13
+  _time: 14

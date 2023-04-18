@@ -11,8 +11,10 @@ public class LevelSettings : ScriptableObject
     [SerializeField] private List<CharacterSO> _characters;
     [SerializeField] private Sprite _backgroung;
     [SerializeField] private int _countQuestions;
+    [SerializeField] private float _time;
 
     public int Number => _number;
+    public float Time => _time;
     public int GetLeftRandomValue() => _leftValues[Random.Range(0, _leftValues.Count)];
     public int GetRightRandomValue() => Random.Range(_minRightValue, _maxRightValue + 1);
     public int CountQuestions => _countQuestions;

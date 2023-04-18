@@ -5,7 +5,8 @@ using UnityEngine.UI;
 public class ResponseTimer : MonoBehaviour
 {
     [SerializeField] private Slider _slider;
-    [SerializeField] private float _time;
+    private float _time;
+    [SerializeField] private Level _level;
 
     private Timer _timer;
 
@@ -14,6 +15,10 @@ public class ResponseTimer : MonoBehaviour
 
     public float Value => 1 - _timer.Time / _timer.MaxTime;
 
+    private void Awake()
+    {
+        _time = _level.Settings.Time;
+    }
     private void Update()
     {
         if(_timer != null)
