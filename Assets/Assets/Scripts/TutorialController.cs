@@ -72,8 +72,12 @@ public class TutorialController : MonoBehaviour
         }
         else
         {
-            _unlockedLevels = PlayerPrefs.GetInt("UnlockedLevels") + 1;
-            PlayerPrefs.SetInt("UnlockedLevels", _unlockedLevels);
+            _unlockedLevels = PlayerPrefs.GetInt("UnlockedLevels");
+ 
+            if (_unlockedLevels <= ButtonOnMenuToTutorial.CurrentTutorial.Number)
+            {
+                PlayerPrefs.SetInt("UnlockedLevels", ButtonOnMenuToTutorial.CurrentTutorial.Number);
+            }
             SceneManager.LoadScene(2);
         }
     }

@@ -21,6 +21,6 @@ public class Savings : MonoBehaviour
         {
             PlayerPrefs.SetInt("UnlockedTutorials", 0);
         }
-        PlayerPrefs.SetInt("UnlockedLevels", 27);
+        //PlayerPrefs.SetInt("UnlockedLevels", 27);
     }
 }

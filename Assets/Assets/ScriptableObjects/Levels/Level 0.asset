@@ -22,7 +22,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f09f183fb8586e94983ce46fac754b18, type: 2}
   - {fileID: 11400000, guid: 78f212ac4e0ad4c4591dcd8b45e4a519, type: 2}
   - {fileID: 11400000, guid: adab6028810c1a646a90c3f705f1a75e, type: 2}
-  - {fileID: 11400000, guid: e45fc1704234b0d4da4623dfffd93881, type: 2}
+  - {fileID: 11400000, guid: 79151279ec3598140ba3a542a1423efb, type: 2}
+  - {fileID: 11400000, guid: cff0ae22e3f65e14c85b7408fcd0ea8b, type: 2}
   _backgroung: {fileID: 21300000, guid: 5e323befe9be79140b9b67820aeb23e3, type: 3}
   _countQuestions: 8
   _time: 10
